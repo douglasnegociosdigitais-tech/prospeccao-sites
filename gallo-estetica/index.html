@@ -5,222 +5,214 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#050505">
-<title>Gallo Cuidados Especiais · Estética Automotiva</title>
+<title>Gallo Cuidados Especiais · Estética Automotiva em Louveira</title>
 <meta name="description" content="Gallo Estética Automotiva em Louveira. Detalhamento automotivo, higienização, polimento técnico, polimento em vidros, coatings cerâmicos e serviços premium.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#050505;--panel:#0b0b0b;--panel2:#111;--gold:#e4a900;--gold2:#ffcf37;--green:#16c861;
-  --text:#f7f5ef;--muted:#b0aaa1;--line:rgba(228,169,0,.45);--soft:#17130a;
+  --bg:#050505;--panel:#0b0b0b;--panel2:#111;--gold:#e1a900;--gold2:#ffd444;
+  --text:#f8f5ed;--muted:#aaa398;--line:rgba(225,169,0,.43);--green:#13c45c;
+  --max:1180px;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:
-radial-gradient(800px 450px at 8% 8%,rgba(228,169,0,.09),transparent 45%),
-linear-gradient(180deg,#050505,#090909 55%,#050505);color:var(--text);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
-a{color:inherit}.wrap{width:min(1160px,calc(100% - 34px));margin:auto}
-.display{font-family:"Barlow Condensed",Impact,"Arial Narrow",sans-serif;text-transform:uppercase;font-style:italic;letter-spacing:-.02em}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#050505;color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+.display{font-family:"Barlow Condensed",Impact,"Arial Narrow",sans-serif;text-transform:uppercase;font-style:italic;letter-spacing:-.025em}
 
-.topbar{position:absolute;top:0;left:0;right:0;z-index:30;border-bottom:1px solid rgba(255,196,0,.12)}
-.topbar-in{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo-link img{width:165px;display:block}.nav{display:flex;gap:30px;align-items:center}.nav a{text-decoration:none;font-size:12px;color:#f4f0e6;position:relative}.nav a.active{color:#ffd22f}.nav a.active:after{content:"";position:absolute;left:0;right:0;bottom:-13px;height:2px;background:#ffd22f}
-.schedule-top{display:inline-flex;align-items:center;gap:8px;border:2px solid #e4a900;padding:12px 18px;border-radius:12px;text-decoration:none;font-size:12px;font-weight:800;background:rgba(0,0,0,.35)}
+/* HEADER */
+.header{position:absolute;inset:0 0 auto;z-index:40;border-bottom:1px solid rgba(255,209,45,.13);background:linear-gradient(180deg,rgba(0,0,0,.68),rgba(0,0,0,.06))}
+.header-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+.brand img{width:168px;max-height:55px;object-fit:contain}
+.nav{display:flex;align-items:center;gap:27px;margin-left:auto}
+.nav a{text-decoration:none;font:600 12px Inter;color:#eee9df;position:relative;padding:9px 0}
+.nav a:hover,.nav a.active{color:var(--gold2)}
+.nav a.active:after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--gold2);box-shadow:0 0 12px rgba(255,211,68,.5)}
+.top-book{display:inline-flex;align-items:center;gap:9px;text-decoration:none;text-transform:uppercase;font-size:11px;font-weight:900;padding:12px 17px;border:2px solid var(--gold2);border-radius:11px;background:rgba(0,0,0,.48);white-space:nowrap}
+.icon-box{width:18px;height:18px;display:inline-grid;place-items:center}
+.icon-box svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
 
-.hero{position:relative;min-height:735px;overflow:hidden;border-bottom:2px solid #c89200;background:#080808}
-.hero:before{content:"";position:absolute;inset:0;background:
-linear-gradient(100deg,rgba(0,0,0,.98) 0%,rgba(0,0,0,.93) 38%,rgba(0,0,0,.18) 72%,rgba(0,0,0,.58) 100%),
-url('../assets/gallo-hero.webp') 70% center/cover no-repeat}
-.hero:after{content:"";position:absolute;left:-130px;top:-170px;width:340px;height:340px;border:2px solid rgba(255,193,7,.45);transform:rotate(45deg);box-shadow:0 0 60px rgba(255,193,7,.14)}
-.hero-in{position:relative;z-index:2;padding-top:128px;padding-bottom:45px;display:grid;grid-template-columns:1.03fr .97fr;gap:26px;align-items:center;min-height:735px}
-.hero-copy{max-width:650px}.hero-logo{width:185px;border-radius:10px;margin-bottom:20px}.hero h1{font-size:clamp(56px,6.4vw,86px);line-height:.9;margin:0 0 16px}.hero h1 .gold{color:#e4a900}.hero p{font-size:17px;line-height:1.48;color:#ddd8cf;max-width:570px;margin:0}
-.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}.benefit{display:flex;align-items:center;gap:9px}.benefit i{width:36px;height:36px;border:1px solid #e4a900;border-radius:50%;display:grid;place-items:center;color:#ffd631;font-style:normal;font-size:18px}.benefit span{font-family:"Barlow Condensed";font-size:12px;font-weight:800;text-transform:uppercase;line-height:1.05}
-.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;border-radius:9px;font-weight:900;font-size:12px;text-transform:uppercase;padding:14px 18px}.btn.gold{background:linear-gradient(#ffd64b,#e2a600);color:#111;box-shadow:0 5px 18px rgba(228,169,0,.2)}.btn.whats{border:2px solid #00c65a;background:#07110a;color:white}.btn.dark{border:2px solid #d29b00;background:#090909;color:#fff}
-.hero-side{position:relative;min-height:535px}.rating-card{position:absolute;right:8px;bottom:10px;background:rgba(9,9,9,.9);border:1px solid #a77a00;border-radius:14px;padding:14px 18px;min-width:190px;box-shadow:0 18px 40px rgba(0,0,0,.32)}.rating-card .g{font-size:32px;font-weight:900;color:#4285f4;margin-right:8px}.rating-card strong{font-size:20px}.rating-card .stars{color:#ffc400;letter-spacing:2px;font-size:18px}.rating-card small{display:block;color:#ddd;font-size:11px;margin-left:44px}
-.side-copy{position:absolute;right:0;top:250px;width:235px;text-align:right;font-family:"Barlow Condensed";font-style:italic;font-size:28px;line-height:1;color:#fff;text-shadow:0 3px 15px #000}.side-copy span{display:block;color:#e4a900;font-size:36px}
+/* HERO */
+.hero{position:relative;min-height:760px;overflow:hidden;border-bottom:2px solid #c99500;background:#050505}
+.hero-bg{position:absolute;inset:0;background:
+ linear-gradient(90deg,rgba(0,0,0,.98) 0%,rgba(0,0,0,.91) 39%,rgba(0,0,0,.30) 66%,rgba(0,0,0,.48) 100%),
+ url('../assets/gallo-hero-bg.svg') 54% center/cover no-repeat;transform:scale(1.01)}
+.hero-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 61% 46%,rgba(222,161,0,.09),transparent 30%)}
+.hero-decor{position:absolute;left:-190px;top:-220px;width:440px;height:440px;border:2px solid rgba(239,180,0,.34);transform:rotate(45deg);box-shadow:0 0 50px rgba(239,180,0,.13)}
+.hero-in{position:relative;z-index:3;min-height:760px;padding-top:132px;padding-bottom:48px;display:grid;grid-template-columns:1.03fr .97fr;align-items:center}
+.hero-copy{position:relative;z-index:4;max-width:640px;padding-bottom:18px}
+.hero-logo{width:178px;margin-bottom:25px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.5))}
+.hero h1{font-size:clamp(58px,6.5vw,88px);line-height:.88;margin:0 0 18px;text-shadow:0 4px 24px rgba(0,0,0,.6)}
+.hero h1 .gold{color:var(--gold2)}
+.hero-lead{max-width:590px;font-size:15px;line-height:1.55;color:#e2ddd3;margin:0}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:25px;max-width:620px}
+.benefit{display:flex;align-items:center;gap:9px;min-width:0}
+.benefit-icon{flex:0 0 37px;width:37px;height:37px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2)}
+.benefit-icon svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8}
+.benefit b{font-family:"Barlow Condensed";font-size:12px;text-transform:uppercase;line-height:1.05;letter-spacing:.03em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 17px;border-radius:9px;text-decoration:none;text-transform:uppercase;font-size:11px;font-weight:900;letter-spacing:.01em;transition:.2s}
+.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+.btn.gold{color:#111;background:linear-gradient(180deg,#ffd84e,#dfa200);box-shadow:0 6px 22px rgba(218,158,0,.24)}
+.btn.whatsapp{color:#fff;border:2px solid #0cc65d;background:rgba(0,0,0,.58)}
+.btn.route{color:#fff;border:2px solid #d6a000;background:rgba(0,0,0,.62)}
+.btn:hover{transform:translateY(-2px)}
 
-.gold-sep{height:2px;background:linear-gradient(90deg,#f6c400,rgba(246,196,0,.15),#f6c400)}
-.section{padding:28px 0 24px;border-bottom:1px solid rgba(228,169,0,.26)}
-.section-kicker{display:flex;align-items:center;gap:10px;font-size:9px;text-transform:uppercase;letter-spacing:.28em;color:#c7bb98}.section-kicker:before{content:"";width:25px;height:2px;background:#e4a900}
-.section-title-row{display:flex;justify-content:space-between;align-items:end;gap:18px;margin:5px 0 12px}.section-title{font-size:43px;margin:0}.section-title .gold{color:#e4a900}.section-mini{font-size:10px;text-transform:uppercase;letter-spacing:.24em;color:#d1be7b}
+.owner{position:absolute;z-index:3;bottom:-3px;left:53%;width:min(420px,36vw);pointer-events:none;filter:drop-shadow(0 25px 35px rgba(0,0,0,.45))}
+.owner img{width:100%;height:auto}
+.rating-card{position:absolute;z-index:6;right:max(4%,calc((100vw - var(--max))/2));bottom:52px;display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-items:center;min-width:230px;padding:13px 17px;border:1px solid rgba(225,169,0,.78);border-radius:13px;background:rgba(9,9,9,.88);backdrop-filter:blur(10px);box-shadow:0 15px 40px rgba(0,0,0,.35)}
+.google-g{font-size:32px;font-weight:900;line-height:1;background:conic-gradient(from -45deg,#4285f4 0 25%,#34a853 0 45%,#fbbc05 0 67%,#ea4335 0 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rating-copy strong{font-size:18px}.rating-copy small{display:block;color:#bbb4aa;margin-top:2px;font-size:10px}.stars{color:#ffc400;letter-spacing:2px}
+.hero-script{position:absolute;z-index:5;right:4%;bottom:157px;width:215px;text-align:right;font:italic 700 30px/1 "Barlow Condensed";color:#fff;transform:rotate(-4deg);text-shadow:0 4px 12px #000}.hero-script span{color:var(--gold2)}
 
-.services-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.service-card{border:1px solid #9c7000;border-radius:10px;background:linear-gradient(180deg,#111,#080808);overflow:hidden;display:flex;flex-direction:column;min-height:350px;box-shadow:inset 0 0 25px rgba(228,169,0,.03)}.service-visual{height:145px;position:relative;background:
-linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.86)),
-url('../assets/gallo-hero.webp') center/cover}.service-card:nth-child(2) .service-visual{background-position:26% center}.service-card:nth-child(3) .service-visual{background-position:52% center}.service-card:nth-child(4) .service-visual{background-position:75% center}.service-card:nth-child(5) .service-visual{background-position:90% center}
-.service-visual:after{content:"";position:absolute;inset:0;border-bottom:1px solid rgba(228,169,0,.38)}.service-badge{position:absolute;left:12px;bottom:10px;z-index:2}.service-badge b{display:block;font-family:"Barlow Condensed";font-style:italic;font-size:25px;line-height:.92;text-transform:uppercase}.service-badge b span{color:#e4a900}.service-badge small{display:block;margin-top:4px;color:#e4a900;font-size:9px;font-weight:900;text-transform:uppercase}
-.service-body{padding:14px 14px 12px;display:flex;flex-direction:column;flex:1}.service-body p{font-size:11px;line-height:1.45;color:#ded9cf;margin:0}.service-meta{display:flex;align-items:center;gap:9px;margin-top:auto;padding-top:14px;color:#e5d7ab}.clock{width:27px;height:27px;border:2px solid #e4a900;border-radius:50%;display:grid;place-items:center;font-size:12px}.price{font-size:10px;text-transform:uppercase}.price strong{display:block;color:white;font-size:15px}.know{margin-top:9px;border:1px solid #e4a900;border-radius:7px;padding:8px 10px;text-align:center;text-transform:uppercase;font-size:10px;font-weight:900;text-decoration:none}
+/* SECTION COMMON */
+.gold-line{height:2px;background:linear-gradient(90deg,#e3a800,rgba(227,168,0,.12),#e3a800)}
+.section{padding:34px 0 30px;border-bottom:1px solid rgba(225,169,0,.28)}
+.kicker{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.27em;font-size:9px;font-weight:700;color:#d3c8ac}.kicker:before{content:"";width:26px;height:2px;background:var(--gold)}
+.title-row{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:5px 0 17px}
+.section-title{font-size:clamp(38px,4vw,52px);line-height:.92;margin:0}.section-title .gold{color:var(--gold2)}
+.section-note{font-size:9px;text-transform:uppercase;letter-spacing:.25em;color:#c7b779;white-space:nowrap}
 
-.about{display:grid;grid-template-columns:.78fr 1.22fr;border-bottom:1px solid rgba(228,169,0,.32);min-height:250px}.about-photo{background:
-linear-gradient(90deg,rgba(0,0,0,.08),rgba(0,0,0,.82)),
-url('../assets/gallo-hero.webp') 52% 40%/cover no-repeat;min-height:250px}.about-copy{padding:24px 32px;background:
-linear-gradient(115deg,#090909 0%,#111 58%,#080808 100%);display:grid;grid-template-columns:1fr .48fr;gap:22px;align-items:center}.about-copy h2{font-size:44px;line-height:.9;margin:6px 0 10px}.about-copy h2 span{color:#e4a900}.about-copy p{font-size:12px;line-height:1.5;color:#ddd6ca;margin:0}.about-icons{display:flex;gap:24px;margin-top:14px}.about-icon{text-align:center}.about-icon i{display:block;color:#e4a900;font-style:normal;font-size:23px}.about-icon b{display:block;font-family:"Barlow Condensed";text-transform:uppercase;font-size:10px}.quote{text-align:center;font-family:"Barlow Condensed";font-style:italic;font-size:26px;color:white;line-height:1}.quote:before{content:"“";font-size:44px;color:#e4a900}.quote span{display:block;font-family:Inter;font-style:normal;font-size:10px;margin-top:10px;color:#d0cabf}.quote .stars{color:#e4a900;letter-spacing:2px;margin-top:8px}
+/* SERVICES */
+.services{background:radial-gradient(550px 260px at 12% 0,rgba(218,160,0,.06),transparent 70%),#080808}
+.services-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px}
+.service-card{min-width:0;border:1px solid #a47700;border-radius:10px;background:linear-gradient(180deg,#111,#080808);overflow:hidden;display:flex;flex-direction:column;box-shadow:inset 0 0 30px rgba(218,160,0,.025);transition:.2s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.35),inset 0 0 30px rgba(218,160,0,.04)}
+.service-photo{position:relative;aspect-ratio:4/3;overflow:hidden;border-bottom:1px solid rgba(225,169,0,.5)}
+.service-photo img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.service-card:hover .service-photo img{transform:scale(1.035)}
+.service-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(0,0,0,.9) 100%)}
+.service-label{position:absolute;z-index:2;left:12px;right:10px;bottom:10px}
+.service-label b{display:block;font:italic 900 25px/.9 "Barlow Condensed";text-transform:uppercase;text-shadow:0 3px 10px #000}.service-label b span{color:var(--gold2)}
+.service-label small{display:inline-block;color:var(--gold2);font-size:8px;text-transform:uppercase;font-weight:900;margin-top:6px;line-height:1.1}
+.service-body{padding:13px;display:flex;flex-direction:column;flex:1}.service-body p{font-size:11px;line-height:1.48;color:#ddd7ce;margin:0;min-height:49px}
+.service-meta{display:flex;align-items:center;gap:9px;margin-top:auto;padding-top:14px}.clock{width:27px;height:27px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2)}.clock svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2}
+.meta-text{font-size:8px;text-transform:uppercase;color:#c7bfae}.meta-text strong{display:block;color:#fff;font-size:13px;margin-top:1px;text-transform:none}
+.learn{margin-top:10px;border:1px solid var(--gold);border-radius:6px;padding:8px;text-align:center;text-decoration:none;text-transform:uppercase;font-size:9px;font-weight:900;transition:.2s}.learn:hover{background:var(--gold);color:#111}
 
-.reviews{padding:22px 0 16px;border-bottom:1px solid rgba(228,169,0,.32)}.reviews-head{display:flex;align-items:center;justify-content:space-between;gap:18px}.reviews-title{font-size:38px;margin:5px 0 12px}.google-summary{display:flex;align-items:center;gap:8px;font-size:12px}.google-summary .g{font-size:28px;font-weight:900;color:#4285f4}.google-summary .stars{color:#ffc400;letter-spacing:2px}.allreviews{border:1px solid #d79e00;border-radius:8px;padding:9px 14px;text-decoration:none;text-transform:uppercase;font-size:9px;font-weight:900}
-.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.review-card{border:1px solid #5b5041;border-radius:9px;padding:12px;background:#0d0d0d;display:grid;grid-template-columns:auto 1fr;gap:10px}.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#158d7b;font-weight:900}.review-card:nth-child(2) .avatar{background:#7b6e59}.review-card:nth-child(3) .avatar{background:#8a5c50}.review-name{font-size:11px;font-weight:700}.review-stars{color:#ffc400;font-size:11px;letter-spacing:1px}.review-text{font-size:11px;line-height:1.35;color:#f4f0e6;margin-top:4px}
+/* ABOUT */
+.about{display:grid;grid-template-columns:.84fr 1.16fr;min-height:300px;border-bottom:1px solid rgba(225,169,0,.35);background:#080808}
+.about-media{position:relative;min-height:340px;overflow:hidden}.about-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.about-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,#080808 100%)}
+.about-content{padding:36px 40px 30px 22px;display:grid;grid-template-columns:1fr .43fr;align-items:center;gap:28px;background:radial-gradient(400px 220px at 0 50%,rgba(225,169,0,.055),transparent 65%)}
+.about-content h2{font-size:clamp(40px,4vw,54px);line-height:.9;margin:7px 0 13px}.about-content h2 span{color:var(--gold2)}
+.about-content p{font-size:12px;line-height:1.58;color:#ddd7cd;margin:0;max-width:610px}
+.about-points{display:flex;gap:24px;margin-top:18px}.about-point{display:flex;align-items:center;gap:7px}.about-point svg{width:25px;height:25px;stroke:var(--gold2);fill:none;stroke-width:1.5}.about-point b{font:800 10px/1.05 "Barlow Condensed";text-transform:uppercase}
+.quote{text-align:center;font:italic 700 25px/1.1 "Barlow Condensed";color:#fff}.quote-mark{font-size:47px;color:var(--gold2);line-height:.4}.quote small{display:block;margin-top:12px;font:500 9px Inter;color:#bab2a6}.quote .stars{display:block;font-size:17px;margin-top:10px}
 
-.contact{display:grid;grid-template-columns:1.05fr .72fr 1fr;gap:0;background:#070707}.contact>div{padding:20px 26px;min-height:205px;border-right:1px solid rgba(228,169,0,.28)}.contact>div:last-child{border-right:0}.contact h2{font-size:38px;margin:4px 0 11px}.address{font-size:12px;line-height:1.45;color:#eee8de;max-width:350px}.contact-buttons{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.mini-btn{padding:9px 10px;border-radius:7px;text-decoration:none;font-size:9px;text-transform:uppercase;font-weight:900;border:1px solid #d19a00}.mini-btn.wh{background:#11b957;border-color:#11b957}.mini-btn.ig{background:#d3267d;border-color:#d3267d}.mini-btn.map{background:#141414}
-.hours-title{display:flex;align-items:center;gap:8px;color:#e4a900;font-size:10px;text-transform:uppercase;letter-spacing:.18em;margin-bottom:8px}.hours-table{width:100%;border-collapse:collapse;font-size:10px}.hours-table td{border:1px solid #54504a;padding:4px 8px}.hours-table td:last-child{text-align:right}.hours-table .closed{color:#ff4646}
-.shop-card{position:relative;background:
-linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.62)),
-url('../assets/gallo-hero.webp') center/cover no-repeat}.shop-card img{position:absolute;left:22px;top:16px;width:130px;border-radius:8px}.shop-card:after{content:"";position:absolute;inset:0;border-left:1px solid rgba(228,169,0,.2);pointer-events:none}
+/* REVIEWS */
+.reviews{background:#070707}.reviews-top{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:18px;margin:5px 0 15px}.reviews-title{font-size:clamp(36px,4vw,48px);margin:0}.google-summary{display:flex;align-items:center;gap:7px;font-size:11px;white-space:nowrap}.google-summary .google-g{font-size:27px}.google-summary .stars{font-size:12px}.all-reviews{border:1px solid var(--gold);border-radius:8px;text-decoration:none;text-transform:uppercase;font-size:8px;font-weight:900;padding:10px 13px;white-space:nowrap}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.review-card{position:relative;border:1px solid #4f4a42;border-radius:9px;background:#0c0c0c;padding:13px 14px;min-height:106px}.review-head{display:flex;align-items:center;gap:10px}.avatar{width:39px;height:39px;border-radius:50%;display:grid;place-items:center;font-weight:900;color:#fff;background:#17937e}.review-card:nth-child(2) .avatar{background:linear-gradient(135deg,#615a4b,#c2a978)}.review-card:nth-child(3) .avatar{background:linear-gradient(135deg,#514d4b,#936a5e)}.review-source{font-size:10px;font-weight:700}.review-source small{display:block;font-weight:500;color:#8f887f;margin-top:2px}.review-g{position:absolute;right:12px;top:11px;font-weight:900;color:#4285f4}.review-stars{font-size:11px;margin:7px 0 2px}.review-text{font-size:11px;line-height:1.38;color:#f1ece4}
 
-footer{padding:16px 0 85px;color:#756f65;font-size:10px;border-top:1px solid rgba(228,169,0,.16)}
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1.08fr .72fr 1fr;background:#070707;border-bottom:1px solid rgba(225,169,0,.32)}
+.contact-panel{padding:25px 28px;border-right:1px solid rgba(225,169,0,.25);min-height:225px}.contact-panel:last-child{border:0}.contact-title{font-size:clamp(35px,3.6vw,46px);margin:6px 0 12px}.address{display:flex;gap:9px;max-width:390px;font-size:12px;line-height:1.55;color:#eee8df}.address svg{flex:0 0 20px;width:20px;height:20px;stroke:var(--gold2);fill:none;stroke-width:2}
+.contact-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.mini-btn{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 10px;border-radius:7px;text-decoration:none;text-transform:uppercase;font-size:8px;font-weight:900;border:1px solid var(--gold)}.mini-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}.mini-btn.wh{background:#12b95a;border-color:#12b95a}.mini-btn.ig{background:#c8297a;border-color:#c8297a}.mini-btn.map{background:#111}
+.hours-title{display:flex;gap:8px;align-items:center;color:var(--gold2);font-size:9px;text-transform:uppercase;letter-spacing:.17em;font-weight:800;margin-bottom:9px}.hours-title svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.hours{width:100%;border-collapse:collapse;font-size:9px}.hours td{border:1px solid #55504a;padding:5px 8px}.hours td:last-child{text-align:right}.hours .closed{color:#ff5050;font-weight:800}.hours tr.today{background:#1d1707;color:#ffdc62}
+.storefront{padding:0;position:relative;overflow:hidden;min-height:225px}.storefront img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.storefront:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.12),rgba(0,0,0,.06))}
+.storefront-logo{position:absolute!important;z-index:2!important;left:20px!important;top:15px!important;width:118px!important;height:auto!important;object-fit:contain!important;filter:drop-shadow(0 5px 12px #000)}
+
+footer{padding:18px 0 92px;color:#746e64;font-size:10px;border-top:1px solid rgba(225,169,0,.13);background:#050505}.footer-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .mobilebar{display:none}
 
-@media(max-width:900px){
-  .topbar{position:relative;background:#060606}.topbar-in{height:62px}.nav,.schedule-top{display:none}.logo-link img{width:135px}
-  .hero{min-height:auto}.hero:before{background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.92) 48%,#050505 100%),url('../assets/gallo-hero.webp') 54% 10%/cover no-repeat}.hero-in{grid-template-columns:1fr;min-height:auto;padding:48px 0 30px}.hero-side{display:none}.hero-logo{width:165px}.hero h1{font-size:50px}.hero p{font-size:14px}.benefits{grid-template-columns:1fr 1fr}.benefit span{font-size:11px}.hero-actions .btn{flex:1 1 47%}.hero-actions .btn.dark{flex-basis:100%}
-  .section{padding:24px 0}.section-title-row{align-items:flex-start;flex-direction:column}.section-title{font-size:37px}.section-mini{display:none}
-  .services-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}.service-card{min-width:82%;scroll-snap-align:start}.service-visual{height:160px}
-  .about{grid-template-columns:1fr}.about-photo{min-height:280px}.about-copy{grid-template-columns:1fr;padding:24px 18px}.about-copy h2{font-size:39px}.quote{text-align:left}
-  .reviews-head{align-items:flex-start;flex-direction:column}.review-grid{grid-template-columns:1fr}.google-summary{order:3}
-  .contact{grid-template-columns:1fr}.contact>div{border-right:0;border-bottom:1px solid rgba(228,169,0,.28)}.shop-card{min-height:240px}
-  .mobilebar{position:fixed;display:grid;z-index:80;left:12px;right:12px;bottom:12px;grid-template-columns:1fr 1.25fr;gap:8px;background:rgba(5,5,5,.96);backdrop-filter:blur(14px);border:1px solid #8d6700;border-radius:16px;padding:7px;box-shadow:0 15px 40px rgba(0,0,0,.55)}.mobilebar a{text-decoration:none;text-align:center;padding:12px 8px;border-radius:10px;font-size:10px;text-transform:uppercase;font-weight:900}.mobilebar .route{border:1px solid #d49d00}.mobilebar .book{background:linear-gradient(#ffd64b,#e2a600);color:#111}
+@media(max-width:1050px) and (min-width:801px){
+ .nav{gap:16px}.nav a{font-size:10px}.brand img{width:145px}.owner{left:55%;width:37vw}.benefits{grid-template-columns:repeat(2,1fr);max-width:430px}.services-grid{grid-template-columns:repeat(3,1fr)}.service-card:nth-child(4),.service-card:nth-child(5){min-height:0}.contact{grid-template-columns:1fr 1fr}.storefront{grid-column:1/-1;min-height:300px}
 }
+
+@media(max-width:800px){
+ .wrap{width:min(100% - 28px,620px)}
+ .header{position:absolute}.header-in{height:62px}.nav,.top-book{display:none}.brand img{width:138px}
+ .hero{min-height:890px}.hero-bg{background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.83) 43%,#050505 76%),url('../assets/gallo-hero-bg.svg') 65% top/auto 54% no-repeat;background-color:#050505}.hero-in{display:block;min-height:890px;padding-top:91px;padding-bottom:0}.hero-copy{max-width:100%}.hero-logo{width:150px;margin-bottom:18px}.hero h1{font-size:52px}.hero-lead{font-size:13px;line-height:1.55}.benefits{grid-template-columns:1fr 1fr;gap:12px 8px;margin-top:19px}.benefit-icon{width:34px;height:34px;flex-basis:34px}.benefit b{font-size:10px}.hero-actions{margin-top:20px}.btn{flex:1 1 calc(50% - 5px);font-size:9px;padding:0 10px}.btn.route{flex-basis:100%}
+ .owner{left:auto;right:-24px;bottom:-2px;width:330px;max-width:76vw}.rating-card{right:14px;bottom:18px;min-width:190px;padding:10px 12px}.rating-card .google-g{font-size:25px}.rating-copy strong{font-size:15px}.hero-script{display:none}
+ .section{padding:28px 0}.title-row{align-items:flex-start;flex-direction:column}.section-title{font-size:39px}.section-note{display:none}
+ .services-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:0 2px 8px;scrollbar-width:none}.services-grid::-webkit-scrollbar{display:none}.service-card{min-width:82%;scroll-snap-align:start}.service-photo{aspect-ratio:4/3}.service-label b{font-size:28px}.service-body p{font-size:12px}.learn{font-size:10px}
+ .about{grid-template-columns:1fr}.about-media{min-height:290px}.about-media:after{background:linear-gradient(180deg,transparent 62%,#080808 100%)}.about-content{padding:26px 18px 31px;grid-template-columns:1fr;gap:25px}.about-content h2{font-size:43px}.about-content p{font-size:12px}.about-points{gap:14px;justify-content:space-between}.about-point{flex:1;flex-direction:column;text-align:center}.quote{text-align:left;border-left:2px solid var(--gold);padding-left:15px}
+ .reviews-top{grid-template-columns:1fr;gap:10px}.google-summary{justify-content:flex-start}.all-reviews{width:max-content}.review-grid{grid-template-columns:1fr}.review-card{min-height:0}
+ .contact{grid-template-columns:1fr}.contact-panel{border-right:0;border-bottom:1px solid rgba(225,169,0,.25);padding:24px 18px;min-height:0}.storefront{min-height:265px}.contact-actions{display:grid;grid-template-columns:1fr 1fr}.mini-btn{justify-content:center;min-height:39px}.mini-btn.map{grid-column:1/-1}.hours{font-size:10px}
+ .mobilebar{display:grid;position:fixed;z-index:90;left:11px;right:11px;bottom:calc(10px + env(safe-area-inset-bottom));grid-template-columns:1fr 1.25fr;gap:7px;padding:7px;border:1px solid #9b7100;border-radius:15px;background:rgba(5,5,5,.96);backdrop-filter:blur(14px);box-shadow:0 14px 42px rgba(0,0,0,.6)}.mobilebar a{min-height:43px;display:flex;align-items:center;justify-content:center;text-decoration:none;text-transform:uppercase;font-size:9px;font-weight:900;border-radius:9px}.mobilebar .route{border:1px solid var(--gold)}.mobilebar .book{background:linear-gradient(180deg,#ffd84e,#dfa200);color:#111}
+}
+
+@media(max-width:390px){.hero h1{font-size:46px}.owner{width:305px}.benefit b{font-size:9px}.service-card{min-width:88%}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="wrap topbar-in">
-    <a class="logo-link" href="#"><img src="../assets/gallo-logo.webp" alt="Gallo Cuidados Especiais"></a>
-    <nav class="nav">
-      <a class="active" href="#">Início</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#avaliacoes">Avaliações</a><a href="#localizacao">Localização</a><a href="#contato">Contato</a>
+<header class="header">
+  <div class="wrap header-in">
+    <a class="brand" href="#inicio" aria-label="Gallo Cuidados Especiais"><img src="../assets/gallo-logo.webp" alt="Gallo Cuidados Especiais"></a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="active" href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#avaliacoes">Avaliações</a><a href="#localizacao">Localização</a><a href="#contato">Contato</a>
     </nav>
-    <a class="schedule-top" href="https://wa.me/5519999686233?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" rel="noopener">▣ Agendar horário</a>
+    <a class="top-book" href="https://wa.me/5519999686233?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" rel="noopener"><span class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span>Agendar horário</a>
   </div>
 </header>
 
-<section class="hero">
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div><div class="hero-decor"></div>
   <div class="wrap hero-in">
     <div class="hero-copy">
       <img class="hero-logo" src="../assets/gallo-logo.webp" alt="Gallo Cuidados Especiais">
       <h1 class="display">Mais que estética.<br><span class="gold">Cuidado de verdade.</span></h1>
-      <p>Especializado em detalhamento automotivo, higienização, polimento em vidros, polimento técnico, aplicação de coatings cerâmicos e serviços premium.</p>
-
+      <p class="hero-lead">Especializado em detalhamento automotivo, higienização, polimento em vidros, polimento técnico, aplicação de coatings cerâmicos e serviços premium.</p>
       <div class="benefits">
-        <div class="benefit"><i>⬡</i><span>Qualidade<br>comprovada</span></div>
-        <div class="benefit"><i>◆</i><span>Produtos<br>premium</span></div>
-        <div class="benefit"><i>⚙</i><span>Equipe<br>especializada</span></div>
-        <div class="benefit"><i>▣</i><span>Resultados<br>que duram</span></div>
+        <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-5"/></svg></span><b>Qualidade<br>comprovada</b></div>
+        <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2l4 7 6 3-6 3-4 7-4-7-6-3 6-3 4-7z"/></svg></span><b>Produtos<br>premium</b></div>
+        <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.1-1l2-1-2-3-2 1a7 7 0 00-2-1l-.3-2h-4L10 7a7 7 0 00-2 1L6 7 4 10l2 1a7 7 0 000 2l-2 1 2 3 2-1a7 7 0 002 1l.5 2h4l.5-2a7 7 0 002-1l2 1 2-3-2-1a7 7 0 00.1-1z"/></svg></span><b>Equipe<br>especializada</b></div>
+        <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M4 16V8l3-2h10l3 2v8"/><path d="M6 16v2M18 16v2M4 12h16M7 12l2-3h6l2 3"/></svg></span><b>Resultados<br>que duram</b></div>
       </div>
-
       <div class="hero-actions">
-        <a class="btn gold" href="https://wa.me/5519999686233?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" rel="noopener">▣ Agendar horário ›</a>
-        <a class="btn whats" href="https://wa.me/5519999686233" target="_blank" rel="noopener">◉ Chamar no WhatsApp ›</a>
-        <a class="btn dark" href="https://maps.app.goo.gl/peU9z26hxyMzgGwH7" target="_blank" rel="noopener">● Ver localização ›</a>
-      </div>
-    </div>
-
-    <div class="hero-side">
-      <div class="side-copy">Resultados que geram <span>confiança.</span></div>
-      <div class="rating-card">
-        <div><span class="g">G</span><strong>5,0 no Google</strong></div>
-        <div class="stars">★★★★★</div>
-        <small>170 avaliações</small>
+        <a class="btn gold" href="https://wa.me/5519999686233?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>Agendar horário <b>›</b></a>
+        <a class="btn whatsapp" href="https://wa.me/5519999686233" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 01-11.8 7L4 20l1.4-4.1A8 8 0 1120 11.5z"/><path d="M8.5 8.5c.7 2.8 2.2 4.3 5 5"/></svg>Chamar no WhatsApp <b>›</b></a>
+        <a class="btn route" href="https://maps.app.goo.gl/peU9z26hxyMzgGwH7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2"/></svg>Ver localização <b>›</b></a>
       </div>
     </div>
   </div>
+  <div class="owner"><img src="../assets/gallo-owner-cutout.svg" alt="Responsável pela Gallo Cuidados Especiais"></div>
+  <div class="hero-script">Resultados que geram <span>confiança.</span></div>
+  <div class="rating-card"><span class="google-g">G</span><div class="rating-copy"><strong>5,0 no Google</strong><div class="stars">★★★★★</div><small>170 avaliações</small></div></div>
 </section>
 
-<div class="gold-sep"></div>
-
-<section class="section" id="servicos">
+<div class="gold-line"></div>
+<section class="section services" id="servicos">
   <div class="wrap">
-    <div class="section-kicker">Nossos serviços</div>
-    <div class="section-title-row">
-      <h2 class="section-title display">Cuidado completo para <span class="gold">o seu veículo</span></h2>
-      <div class="section-mini">Beleza • Proteção • Durabilidade</div>
-    </div>
-
+    <div class="kicker">Nossos serviços</div>
+    <div class="title-row"><h2 class="section-title display">Cuidado completo para <span class="gold">o seu veículo</span></h2><div class="section-note">Beleza • Proteção • Durabilidade</div></div>
     <div class="services-grid">
-      <article class="service-card">
-        <div class="service-visual"><div class="service-badge"><b>Leva e <span>Trás</span></b><small>Praticidade que faz a diferença</small></div></div>
-        <div class="service-body"><p>Buscamos e entregamos seu veículo com segurança e comodidade.</p><div class="service-meta"><span class="clock">◷</span><div class="price">Conveniência<strong>Valor a combinar</strong></div></div><a class="know" href="https://wa.me/5519999686233" target="_blank" rel="noopener">Saiba mais ›</a></div>
-      </article>
-      <article class="service-card">
-        <div class="service-visual"><div class="service-badge"><b>Lavagem <span>Nível 01</span></b><small>Limpeza e proteção básica</small></div></div>
-        <div class="service-body"><p>Limpeza externa com pré-lavagem e processo cuidadoso para remoção de sujeiras.</p><div class="service-meta"><span class="clock">◷</span><div class="price">2h30 de duração<strong>Preço variável</strong></div></div><a class="know" href="https://wa.me/5519999686233" target="_blank" rel="noopener">Saiba mais ›</a></div>
-      </article>
-      <article class="service-card">
-        <div class="service-visual"><div class="service-badge"><b>Lavagem <span>Nível 02</span></b><small>Intermediário</small></div></div>
-        <div class="service-body"><p>Limpeza detalhada com foco em acabamento premium e proteção.</p><div class="service-meta"><span class="clock">◷</span><div class="price">4h de duração<strong>Preço variável</strong></div></div><a class="know" href="https://wa.me/5519999686233" target="_blank" rel="noopener">Saiba mais ›</a></div>
-      </article>
-      <article class="service-card">
-        <div class="service-visual"><div class="service-badge"><b>Lavagem <span>Nível 03</span></b><small>Avançado</small></div></div>
-        <div class="service-body"><p>Detalhamento completo com alto nível de acabamento e proteção prolongada.</p><div class="service-meta"><span class="clock">◷</span><div class="price">1 dia e 5h<strong>Preço variável</strong></div></div><a class="know" href="https://wa.me/5519999686233" target="_blank" rel="noopener">Saiba mais ›</a></div>
-      </article>
-      <article class="service-card">
-        <div class="service-visual"><div class="service-badge"><b>Cera <span>Premium</span></b><small>Proteção de alto nível</small></div></div>
-        <div class="service-body"><p>Proteção da pintura com cera premium, realce do brilho e durabilidade.</p><div class="service-meta"><span class="clock">◷</span><div class="price">1h de duração<strong>R$ 120,00</strong></div></div><a class="know" href="https://wa.me/5519999686233" target="_blank" rel="noopener">Saiba mais ›</a></div>
-      </article>
+      <article class="service-card"><div class="service-photo"><img src="../assets/gallo-service-leva-tras.svg" alt="Leva e Trás"><div class="service-label"><b>Leva e <span>Trás</span></b><small>Praticidade que faz a diferença</small></div></div><div class="service-body"><p>Buscamos e entregamos seu veículo com segurança e comodidade.</p><div class="service-meta"><span class="clock"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="meta-text">1h de duração<strong>Valor a combinar</strong></div></div><a class="learn" href="https://wa.me/5519999686233" target="_blank" rel="noopener">Saiba mais ›</a></div></article>
+      <article class="service-card"><div class="service-photo"><img src="../assets/gallo-service-nivel1.svg" alt="Lavagem Nível 01"><div class="service-label"><b>Lavagem <span>Nível 01</span></b><small>Limpeza e proteção básica</small></div></div><div class="service-body"><p>Limpeza externa com pré-lavagem e processo cuidadoso para remoção de sujeiras.</p><div class="service-meta"><span class="clock"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="meta-text">2h30 de duração<strong>Preço variável</strong></div></div><a class="learn" href="https://wa.me/5519999686233" target="_blank" rel="noopener">Saiba mais ›</a></div></article>
+      <article class="service-card"><div class="service-photo"><img src="../assets/gallo-service-nivel2.svg" alt="Lavagem Nível 02"><div class="service-label"><b>Lavagem <span>Nível 02</span></b><small>Intermediário</small></div></div><div class="service-body"><p>Limpeza detalhada com foco em acabamento premium e mais proteção.</p><div class="service-meta"><span class="clock"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="meta-text">4h de duração<strong>Preço variável</strong></div></div><a class="learn" href="https://wa.me/5519999686233" target="_blank" rel="noopener">Saiba mais ›</a></div></article>
+      <article class="service-card"><div class="service-photo"><img src="../assets/gallo-service-nivel3.svg" alt="Lavagem Nível 03"><div class="service-label"><b>Lavagem <span>Nível 03</span></b><small>Avançado</small></div></div><div class="service-body"><p>Detalhamento completo com alto nível de acabamento e proteção prolongada.</p><div class="service-meta"><span class="clock"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="meta-text">1 dia e 5h<strong>Preço variável</strong></div></div><a class="learn" href="https://wa.me/5519999686233" target="_blank" rel="noopener">Saiba mais ›</a></div></article>
+      <article class="service-card"><div class="service-photo"><img src="../assets/gallo-service-cera.svg" alt="Aplicação de Cera Premium"><div class="service-label"><b>Cera <span>Premium</span></b><small>Proteção de alto nível</small></div></div><div class="service-body"><p>Proteção da pintura com cera premium, realce do brilho e durabilidade.</p><div class="service-meta"><span class="clock"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="meta-text">1h de duração<strong>R$ 120,00</strong></div></div><a class="learn" href="https://wa.me/5519999686233" target="_blank" rel="noopener">Saiba mais ›</a></div></article>
     </div>
   </div>
 </section>
 
 <section class="about" id="sobre">
-  <div class="about-photo"></div>
-  <div class="about-copy">
-    <div>
-      <div class="section-kicker">Sobre a Gallo</div>
-      <h2 class="display">Resultados que <span>geram confiança.</span></h2>
-      <p>A Gallo Estética Automotiva nasceu da paixão por carros e do compromisso em entregar um serviço de excelência. Técnicas avançadas, atenção em cada detalhe e cuidados premium para seu veículo.</p>
-      <div class="about-icons">
-        <div class="about-icon"><i>🏆</i><b>Experiência<br>e dedicação</b></div>
-        <div class="about-icon"><i>◆</i><b>Produtos de<br>alta qualidade</b></div>
-        <div class="about-icon"><i>♙</i><b>Atendimento<br>personalizado</b></div>
-      </div>
-    </div>
-    <div class="quote">Mais que estética,<br>é cuidado de verdade.<span>— Gallo Cuidados Especiais</span><div class="stars">★★★★★</div></div>
+  <div class="about-media"><img src="../assets/gallo-about.svg" alt="Detalhamento e polimento automotivo Gallo"></div>
+  <div class="about-content">
+    <div><div class="kicker">Sobre a Gallo</div><h2 class="display">Resultados que <span>geram confiança.</span></h2><p>A Gallo Estética Automotiva é especializada em cuidados automotivos premium, com foco em técnica, atenção aos detalhes e acabamento. Cada serviço é pensado para conservar, proteger e valorizar o veículo.</p><div class="about-points"><div class="about-point"><svg viewBox="0 0 24 24"><path d="M8 3h8v5a4 4 0 01-8 0V3zM6 5H3v2a4 4 0 004 4M18 5h3v2a4 4 0 01-4 4M12 12v5M8 21h8M9 17h6"/></svg><b>Experiência<br>e dedicação</b></div><div class="about-point"><svg viewBox="0 0 24 24"><path d="M12 2l4 7 6 3-6 3-4 7-4-7-6-3 6-3 4-7z"/></svg><b>Produtos de<br>alta qualidade</b></div><div class="about-point"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 20v-2a6 6 0 0112 0v2M15 15a5 5 0 016 5"/></svg><b>Atendimento<br>personalizado</b></div></div></div>
+    <div class="quote"><span class="quote-mark">“</span>Mais que estética,<br>é cuidado de verdade.<small>— Gallo Cuidados Especiais</small><span class="stars">★★★★★</span></div>
   </div>
 </section>
 
-<section class="reviews" id="avaliacoes">
-  <div class="wrap">
-    <div class="section-kicker">Avaliações</div>
-    <div class="reviews-head">
-      <h2 class="reviews-title display">O que nossos clientes dizem</h2>
-      <div class="google-summary"><span class="g">G</span><b>5,0 no Google</b><span class="stars">★★★★★</span><span>170 avaliações</span></div>
-      <a class="allreviews" href="https://maps.app.goo.gl/peU9z26hxyMzgGwH7" target="_blank" rel="noopener">Ver todas as avaliações ›</a>
-    </div>
-    <div class="review-grid">
-      <article class="review-card"><div class="avatar">P</div><div><div class="review-name">Cliente Google</div><div class="review-stars">★★★★★</div><div class="review-text">“Maravilhoso atendimento, ótimo resultado no carro e na moto.”</div></div></article>
-      <article class="review-card"><div class="avatar">●</div><div><div class="review-name">Cliente Google</div><div class="review-stars">★★★★★</div><div class="review-text">“Atendimento atencioso, equipe profissional e serviço entregue no prazo.”</div></div></article>
-      <article class="review-card"><div class="avatar">●</div><div><div class="review-name">Cliente Google</div><div class="review-stars">★★★★★</div><div class="review-text">“A higienização do ar condicionado é outro nível.”</div></div></article>
-    </div>
-  </div>
-</section>
+<section class="section reviews" id="avaliacoes"><div class="wrap"><div class="kicker">Avaliações</div><div class="reviews-top"><h2 class="reviews-title display">O que nossos clientes dizem</h2><div class="google-summary"><span class="google-g">G</span><b>5,0 no Google</b><span class="stars">★★★★★</span><span>170 avaliações</span></div><a class="all-reviews" href="https://maps.app.goo.gl/peU9z26hxyMzgGwH7" target="_blank" rel="noopener">Ver todas as avaliações ›</a></div><div class="review-grid">
+  <article class="review-card"><div class="review-g">G</div><div class="review-head"><div class="avatar">P</div><div class="review-source">Avaliação no Google<small>Cliente da Gallo</small></div></div><div class="review-stars stars">★★★★★</div><div class="review-text">“Maravilhoso atendimento, ótimo resultado no carro e na moto.”</div></article>
+  <article class="review-card"><div class="review-g">G</div><div class="review-head"><div class="avatar">●</div><div class="review-source">Avaliação no Google<small>Cliente da Gallo</small></div></div><div class="review-stars stars">★★★★★</div><div class="review-text">“Atendimento atencioso, equipe profissional e serviço entregue no prazo.”</div></article>
+  <article class="review-card"><div class="review-g">G</div><div class="review-head"><div class="avatar">●</div><div class="review-source">Avaliação no Google<small>Cliente da Gallo</small></div></div><div class="review-stars stars">★★★★★</div><div class="review-text">“A higienização do ar condicionado é outro nível.”</div></article>
+</div></div></section>
 
 <section class="contact" id="contato">
-  <div id="localizacao">
-    <div class="section-kicker">Contato e localização</div>
-    <h2 class="display">Venha nos visitar</h2>
-    <div class="address">📍 R. Luís Gonzaga, 786 · Sagrado Coração de Jesus, Louveira - SP, 13290-000</div>
-    <div class="contact-buttons">
-      <a class="mini-btn wh" href="https://wa.me/5519999686233" target="_blank" rel="noopener">Chamar no WhatsApp</a>
-      <a class="mini-btn ig" href="https://www.instagram.com/galloesteticaautomotiva/" target="_blank" rel="noopener">Nosso Instagram</a>
-      <a class="mini-btn map" href="https://maps.app.goo.gl/peU9z26hxyMzgGwH7" target="_blank" rel="noopener">Ver no Google Maps</a>
-    </div>
-  </div>
-  <div>
-    <div class="hours-title">◷ Horário de atendimento</div>
-    <table class="hours-table">
-      <tr><td>Segunda-feira</td><td>08:00 – 18:00</td></tr>
-      <tr><td>Terça-feira</td><td>08:00 – 18:00</td></tr>
-      <tr><td>Quarta-feira</td><td>08:00 – 18:00</td></tr>
-      <tr><td>Quinta-feira</td><td>08:00 – 18:00</td></tr>
-      <tr><td>Sexta-feira</td><td>08:00 – 18:00</td></tr>
-      <tr><td>Sábado</td><td>08:00 – 18:00</td></tr>
-      <tr><td>Domingo</td><td class="closed">Fechado</td></tr>
-    </table>
-  </div>
-  <div class="shop-card"><img src="../assets/gallo-logo.webp" alt="Gallo Cuidados Especiais"></div>
+  <div class="contact-panel" id="localizacao"><div class="kicker">Contato e localização</div><h2 class="contact-title display">Venha nos visitar</h2><div class="address"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2"/></svg><span>R. Luís Gonzaga, 786 · Sagrado Coração de Jesus,<br>Louveira - SP, 13290-000</span></div><div class="contact-actions"><a class="mini-btn wh" href="https://wa.me/5519999686233" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 01-11.8 7L4 20l1.4-4.1A8 8 0 1120 11.5z"/></svg>Chamar no WhatsApp</a><a class="mini-btn ig" href="https://www.instagram.com/galloesteticaautomotiva/" target="_blank" rel="noopener">◎ Nosso Instagram</a><a class="mini-btn map" href="https://maps.app.goo.gl/peU9z26hxyMzgGwH7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2"/></svg>Ver no Google Maps</a></div></div>
+  <div class="contact-panel"><div class="hours-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Horário de atendimento</div><table class="hours"><tr data-day="1"><td>Segunda-feira</td><td>08:00 – 18:00</td></tr><tr data-day="2"><td>Terça-feira</td><td>08:00 – 18:00</td></tr><tr data-day="3"><td>Quarta-feira</td><td>08:00 – 18:00</td></tr><tr data-day="4"><td>Quinta-feira</td><td>08:00 – 18:00</td></tr><tr data-day="5"><td>Sexta-feira</td><td>08:00 – 18:00</td></tr><tr data-day="6"><td>Sábado</td><td>08:00 – 18:00</td></tr><tr data-day="0"><td>Domingo</td><td class="closed">Fechado</td></tr></table></div>
+  <div class="contact-panel storefront"><img src="../assets/gallo-storefront.svg" alt="Apresentação visual da Gallo Cuidados Especiais"><img class="storefront-logo" src="../assets/gallo-logo.webp" alt=""></div>
 </section>
 
-<footer><div class="wrap">Gallo Cuidados Especiais · Louveira/SP · Apresentação institucional</div></footer>
-
-<div class="mobilebar">
-  <a class="route" href="https://maps.app.goo.gl/peU9z26hxyMzgGwH7" target="_blank" rel="noopener">Ver rota</a>
-  <a class="book" href="https://wa.me/5519999686233?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" rel="noopener">Agendar horário</a>
-</div>
+<footer><div class="wrap footer-in"><span>Gallo Cuidados Especiais · Louveira/SP</span><span>Detalhamento · Higienização · Polimento · Coatings</span></div></footer>
+<div class="mobilebar"><a class="route" href="https://maps.app.goo.gl/peU9z26hxyMzgGwH7" target="_blank" rel="noopener">Ver rota</a><a class="book" href="https://wa.me/5519999686233?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" rel="noopener">Agendar horário</a></div>
+<script>const d=new Date().getDay();document.querySelectorAll('.hours tr[data-day]').forEach(r=>{if(Number(r.dataset.day)===d)r.classList.add('today')});</script>
 </body>
 </html>
