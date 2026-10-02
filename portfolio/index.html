@@ -185,11 +185,26 @@
     .site-card:hover{transform:translateY(-5px);border-color:#2e5277;box-shadow:0 28px 75px rgba(0,0,0,.31)}
     .site-card:hover::after{opacity:1;animation:scan 1.2s ease}
     @keyframes scan{to{transform:translateX(75%)}}
-    .site-preview{position:relative;aspect-ratio:16/9;overflow:hidden;background:#07101a;border-bottom:1px solid #172a40}
-    .browser-bar{position:absolute;z-index:3;left:0;right:0;top:0;height:28px;background:rgba(5,9,15,.91);border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;padding:0 10px;gap:5px}
+    .site-preview{position:relative;aspect-ratio:16/9;overflow:hidden;background:#07101a;border-bottom:1px solid #172a40;cursor:zoom-in}
+    .browser-bar{position:absolute;z-index:7;left:0;right:0;top:0;height:28px;background:rgba(5,9,15,.94);border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;padding:0 10px;gap:5px;backdrop-filter:blur(10px)}
     .browser-bar i{width:6px;height:6px;border-radius:50%;background:#213b59}.browser-bar i:nth-child(2){opacity:.75}.browser-bar i:nth-child(3){opacity:.5}
-    .site-preview img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .48s ease;filter:saturate(.94)}
-    .site-card:hover .site-preview img{transform:scale(1.018)}
+    .site-preview img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .48s ease,filter .48s ease;filter:saturate(.94)}
+    .site-card:hover .site-preview img{transform:scale(1.018);filter:saturate(1)}
+    .live-preview{position:absolute;inset:28px 0 0;overflow:hidden;background:#07101a}
+    .live-preview iframe{position:absolute;left:0;top:0;width:1440px;height:810px;border:0;transform-origin:0 0;pointer-events:none;background:#fff;opacity:0;transition:opacity .35s ease}
+    .live-preview.ready iframe{opacity:1}
+    .preview-status{position:absolute;z-index:5;inset:28px 0 0;display:grid;place-items:center;background:
+      radial-gradient(circle at 50% 50%,rgba(35,140,255,.13),transparent 34%),
+      linear-gradient(135deg,#07101a,#0a1726);transition:opacity .28s ease}
+    .live-preview.ready + .preview-status{opacity:0;pointer-events:none}
+    .preview-status span{display:flex;align-items:center;gap:8px;color:#6e8eac;font-size:9px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+    .preview-status span:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 15px var(--blue);animation:pulseDot 1.2s ease-in-out infinite}
+    @keyframes pulseDot{50%{opacity:.35;transform:scale(.7)}}
+    .preview-hint{position:absolute;z-index:8;right:10px;bottom:10px;display:flex;align-items:center;gap:6px;padding:7px 9px;border:1px solid rgba(100,180,255,.23);border-radius:999px;background:rgba(4,10,17,.78);backdrop-filter:blur(10px);color:#a8ccef;font-size:8px;font-weight:850;letter-spacing:.04em;opacity:0;transform:translateY(4px);transition:.22s}
+    .site-preview:hover .preview-hint{opacity:1;transform:none}
+    .site-preview:after{content:"";position:absolute;z-index:6;left:-30%;top:28px;width:18%;height:calc(100% - 28px);background:linear-gradient(90deg,transparent,rgba(90,180,255,.12),transparent);transform:skewX(-16deg);opacity:0;pointer-events:none}
+    .site-card:hover .site-preview:after{opacity:1;animation:previewSweep 1.25s ease}
+    @keyframes previewSweep{to{left:115%}}
     .site-body{padding:19px 20px 20px}
     .site-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
     .tag{display:inline-flex;align-items:center;padding:7px 10px;border-radius:999px;border:1px solid #203b5c;background:rgba(35,140,255,.075);color:#96c8ff;font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.05em}
@@ -200,15 +215,6 @@
     .domain{min-width:0;color:#536a83;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .open-project{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#dbeaff;font-size:11px;font-weight:850}
     .open-project b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid #28517b;color:#66b7ff;background:#071522}
-    .mock-preview{height:100%;padding:58px 9% 8%;position:relative;overflow:hidden}
-    .mock-preview strong{display:block;font-size:clamp(18px,2.7vw,36px);line-height:1.02;letter-spacing:-.045em;max-width:65%}
-    .mock-preview small{display:block;margin-top:10px;font-size:9px;opacity:.66;max-width:62%}
-    .mock-preview .mini-btn{display:inline-block;margin-top:14px;padding:8px 11px;border-radius:99px;font-size:7px;font-weight:900}
-    .mock-preview.beauty{background:linear-gradient(120deg,#fff8f5,#f1cec2);color:#542a1d}.mock-preview.beauty .mini-btn{background:#5a2f22;color:#fff}
-    .mock-preview.pet{background:radial-gradient(circle at 80% 45%,#155c39 0 23%,transparent 24%),linear-gradient(120deg,#fff,#e8fff2);color:#05150d}.mock-preview.pet b{color:#1db75d}.mock-preview.pet .mini-btn{background:#07120d;color:#fff}
-    .mock-preview.auto{background:linear-gradient(115deg,#050505,#181818);color:#fff}.mock-preview.auto strong em{color:#ffd331;font-style:normal}.mock-preview.auto .mini-btn{background:#f6cc22;color:#000}
-    .mock-preview.b2b{background:radial-gradient(circle at 85% 45%,#efc729 0 8%,transparent 8.5%),radial-gradient(circle at 77% 59%,#43a75a 0 10%,transparent 10.5%),linear-gradient(120deg,#fff 0 68%,#eaf6ed 69%);color:#153129}.mock-preview.b2b strong b{color:#2a9a37}.mock-preview.b2b .mini-btn{background:#34a743;color:#fff}
-    .mock-preview.zap{background:linear-gradient(135deg,#f7f0e8,#fff);color:#39271d}.mock-preview.zap strong b{color:#9e633e}.mock-preview.zap .mini-btn{background:#8f5d3d;color:white}
 
     .case-feature{margin-top:17px;padding:24px;border:1px solid #1f3751;border-radius:26px;background:linear-gradient(115deg,rgba(12,25,42,.96),rgba(5,11,18,.97));display:grid;grid-template-columns:1fr 1.15fr;gap:30px;align-items:center}
     .case-feature h3{font-size:34px;letter-spacing:-.05em;margin:7px 0 10px}
@@ -276,6 +282,17 @@
     .skill{padding:13px 14px;border:1px solid #172a3f;border-radius:14px;background:#08111c}
     .skill strong{font-size:11px}.skill span{display:block;color:#617890;font-size:9px;margin-top:3px}
 
+    .project-viewer{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:26px;background:rgba(2,5,9,.84);backdrop-filter:blur(18px)}
+    .project-viewer.open{display:flex;animation:viewerIn .2s ease}
+    @keyframes viewerIn{from{opacity:0}to{opacity:1}}
+    .viewer-shell{width:min(1240px,96vw);height:min(820px,88vh);display:flex;flex-direction:column;border:1px solid #264968;border-radius:22px;overflow:hidden;background:#07101a;box-shadow:0 40px 140px rgba(0,0,0,.65)}
+    .viewer-bar{height:52px;flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:0 14px;background:#09131f;border-bottom:1px solid #17304a}
+    .viewer-dots{display:flex;gap:6px}.viewer-dots i{width:7px;height:7px;border-radius:50%;background:#254460}
+    .viewer-title{min-width:0;flex:1;color:#7892ad;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .viewer-open,.viewer-close{min-width:40px;height:36px;display:grid;place-items:center;border:1px solid #21415f;border-radius:10px;background:#07111d;color:#c7def6;text-decoration:none;cursor:pointer}
+    .viewer-frame{position:relative;flex:1;background:#fff}
+    .viewer-frame iframe{width:100%;height:100%;border:0;background:#fff}
+    .mobile-dock{display:none}
     .contact{
       position:relative;overflow:hidden;padding:48px;border:1px solid #214568;border-radius:30px;
       background:radial-gradient(circle at 85% 30%,rgba(35,140,255,.23),transparent 32%),linear-gradient(120deg,#071321,#08101a);
@@ -302,6 +319,17 @@
       .about-grid{grid-template-columns:1fr}.about-side{position:static}
     }
     @media(max-width:720px){
+      body{padding-bottom:76px}
+      .mobile-dock{position:fixed;z-index:90;display:grid;grid-template-columns:repeat(3,1fr);left:12px;right:12px;bottom:max(10px,env(safe-area-inset-bottom));height:58px;border:1px solid #1d3c59;border-radius:18px;background:rgba(6,13,22,.9);backdrop-filter:blur(18px);box-shadow:0 18px 55px rgba(0,0,0,.45);overflow:hidden}
+      .mobile-dock a{display:flex;align-items:center;justify-content:center;gap:6px;color:#7891aa;text-decoration:none;font-size:9px;font-weight:850;border-right:1px solid rgba(70,130,190,.11)}
+      .mobile-dock a:last-child{border-right:0;color:#dff0ff;background:linear-gradient(135deg,rgba(35,140,255,.18),rgba(35,140,255,.05))}
+      .project-viewer{padding:0;align-items:stretch}
+      .viewer-shell{width:100vw;height:100dvh;max-height:none;border-radius:0;border:0}
+      .viewer-bar{padding-top:env(safe-area-inset-top);height:calc(52px + env(safe-area-inset-top))}
+      .site-card{border-radius:22px}
+      .site-preview{cursor:pointer}
+      .preview-hint{opacity:1;transform:none;font-size:7px}
+
       .wrap{width:min(100% - 24px,var(--max))}
       .nav-in{min-height:64px}.nav-links{display:none}.nav .btn{min-height:39px;padding:0 12px;font-size:10px}
       .hero{padding:58px 0 42px}.hero-grid{gap:26px}.name-line{font-size:11px;letter-spacing:.3em}
@@ -398,7 +426,7 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div><span class="kicker">Produtos digitais</span><h2>Sites, SaaS e aplicações.</h2></div>
-          <p>Uma seleção de projetos publicados. As prévias abaixo são imagens estáticas otimizadas: o portfólio abre rápido e o projeto completo só é carregado quando você decide visitar.</p>
+          <p>Uma seleção de projetos publicados. As prévias são reais: screenshots dos projetos e, nos casos em que a captura antiga não representava bem o site, uma prévia ao vivo é carregada somente quando entra na tela.</p>
         </div>
 
         <div class="site-grid">
@@ -418,12 +446,12 @@
           </article>
 
           <article class="site-card reveal">
-            <div class="site-preview"><div class="browser-bar"><i></i><i></i><i></i></div><img src="https://screenshot2.lovable.dev/lovp_71d6q76xd89xk864j147k67w3c/47699bb6a9dbc71fdb91e6efc8265f07_1790833635496.png" alt="Dramais TV" loading="lazy" decoding="async"></div>
+            <div class="site-preview smart-preview" data-live-src="https://dramaistv.app/" aria-label="Prévia real de Dramais TV"><div class="browser-bar"><i></i><i></i><i></i></div><div class="live-preview" aria-hidden="true"></div><div class="preview-status"><span>carregando prévia original</span></div><span class="preview-hint">ver ao vivo ↗</span></div>
             <div class="site-body"><div class="site-top"><span class="tag">Streaming / Produto</span><span class="live"><i></i> publicado</span></div><h3>Dramais TV</h3><p>Produto de vídeo com experiência mobile-first, catálogo, playback, acesso e estrutura comercial orientada ao WhatsApp.</p><div class="site-foot"><span class="domain">dramaistv.app</span><a class="open-project" href="https://dramaistv.app" target="_blank" rel="noopener noreferrer">Abrir <b>↗</b></a></div></div>
           </article>
 
           <article class="site-card reveal">
-            <div class="site-preview"><div class="browser-bar"><i></i><i></i><i></i></div><img src="https://screenshot2.lovable.dev/df9afae7-9e9e-470c-9808-d618a795e4e3/id-preview-05e6a676--a6a15292-52a8-4022-ad00-97811eead684.lovable.app-1785729297027.png" alt="Lina Cucina" loading="lazy" decoding="async"></div>
+            <div class="site-preview smart-preview" data-live-src="https://lina-cucina-digital.lovable.app/" aria-label="Prévia real de Lina Cucina"><div class="browser-bar"><i></i><i></i><i></i></div><div class="live-preview" aria-hidden="true"></div><div class="preview-status"><span>carregando prévia original</span></div><span class="preview-hint">ver ao vivo ↗</span></div>
             <div class="site-body"><div class="site-top"><span class="tag">Restaurante</span><span class="live"><i></i> publicado</span></div><h3>Lina Cucina</h3><p>Experiência digital premium para restaurante, com cardápio visual, categorias e fluxo orientado para pedido.</p><div class="site-foot"><span class="domain">lina-cucina-digital.lovable.app</span><a class="open-project" href="https://lina-cucina-digital.lovable.app/" target="_blank" rel="noopener noreferrer">Abrir <b>↗</b></a></div></div>
           </article>
 
@@ -433,7 +461,7 @@
           </article>
 
           <article class="site-card reveal">
-            <div class="site-preview"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-preview zap"><strong>PARE DE MANDAR <b>“SÓ O PREÇO”</b> PELO WHATSAPP.</strong><small>Crie orçamentos e propostas profissionais em poucos minutos.</small><span class="mini-btn">CRIAR ORÇAMENTO</span></div></div>
+            <div class="site-preview smart-preview" data-live-src="https://orca-zap.lovable.app/" aria-label="Prévia real de FechôZAP"><div class="browser-bar"><i></i><i></i><i></i></div><div class="live-preview" aria-hidden="true"></div><div class="preview-status"><span>carregando prévia original</span></div><span class="preview-hint">ver ao vivo ↗</span></div>
             <div class="site-body"><div class="site-top"><span class="tag">SaaS / WhatsApp</span><span class="live"><i></i> publicado</span></div><h3>FechôZAP</h3><p>Ferramenta para criar propostas e orçamentos profissionais e compartilhar por PDF, imagem ou WhatsApp.</p><div class="site-foot"><span class="domain">orca-zap.lovable.app</span><a class="open-project" href="https://orca-zap.lovable.app" target="_blank" rel="noopener noreferrer">Abrir <b>↗</b></a></div></div>
           </article>
 
@@ -459,13 +487,13 @@
         </div>
 
         <div class="site-grid">
-          <article class="site-card reveal"><div class="site-preview"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-preview beauty"><small>ESTÉTICA · SAÚDE · BEM-ESTAR</small><strong>Cuidado estético com leveza, saúde e autoestima.</strong><span class="mini-btn">AGENDAR AVALIAÇÃO</span></div></div><div class="site-body"><div class="site-top"><span class="tag">Estética & Saúde</span><span class="live"><i></i> GitHub Pages</span></div><h3>Beauty Care</h3><p>Apresentação elegante para clínica de estética e saúde, com foco em serviços, reputação, localização e agendamento.</p><div class="site-foot"><span class="domain">Morungaba · SP</span><a class="open-project" href="../beauty-care/" target="_blank">Abrir <b>↗</b></a></div></div></article>
+          <article class="site-card reveal"><div class="site-preview smart-preview" data-live-src="../beauty-care/" aria-label="Prévia real de Beauty Care"><div class="browser-bar"><i></i><i></i><i></i></div><div class="live-preview" aria-hidden="true"></div><div class="preview-status"><span>carregando prévia original</span></div><span class="preview-hint">ver ao vivo ↗</span></div><div class="site-body"><div class="site-top"><span class="tag">Estética & Saúde</span><span class="live"><i></i> GitHub Pages</span></div><h3>Beauty Care</h3><p>Apresentação elegante para clínica de estética e saúde, com foco em serviços, reputação, localização e agendamento.</p><div class="site-foot"><span class="domain">Morungaba · SP</span><a class="open-project" href="../beauty-care/" target="_blank">Abrir <b>↗</b></a></div></div></article>
 
-          <article class="site-card reveal"><div class="site-preview"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-preview pet"><small>ALDEIA DA SERRA · BARUERI</small><strong>Amor, cuidado e <b>saúde</b> para o seu pet.</strong><span class="mini-btn">FALAR NO WHATSAPP</span></div></div><div class="site-body"><div class="site-top"><span class="tag">Pet Shop & Vet</span><span class="live"><i></i> GitHub Pages</span></div><h3>Planeta Animal</h3><p>Site institucional para pet shop e clínica veterinária, reunindo história, serviços, avaliações e contato.</p><div class="site-foot"><span class="domain">Aldeia da Serra · Barueri</span><a class="open-project" href="../planeta-animal/" target="_blank">Abrir <b>↗</b></a></div></div></article>
+          <article class="site-card reveal"><div class="site-preview smart-preview" data-live-src="../planeta-animal/" aria-label="Prévia real de Planeta Animal"><div class="browser-bar"><i></i><i></i><i></i></div><div class="live-preview" aria-hidden="true"></div><div class="preview-status"><span>carregando prévia original</span></div><span class="preview-hint">ver ao vivo ↗</span></div><div class="site-body"><div class="site-top"><span class="tag">Pet Shop & Vet</span><span class="live"><i></i> GitHub Pages</span></div><h3>Planeta Animal</h3><p>Site institucional para pet shop e clínica veterinária, reunindo história, serviços, avaliações e contato.</p><div class="site-foot"><span class="domain">Aldeia da Serra · Barueri</span><a class="open-project" href="../planeta-animal/" target="_blank">Abrir <b>↗</b></a></div></div></article>
 
-          <article class="site-card reveal"><div class="site-preview"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-preview auto"><small>ESTÉTICA AUTOMOTIVA</small><strong>MAIS QUE ESTÉTICA.<br><em>CUIDADO DE VERDADE.</em></strong><span class="mini-btn">AGENDAR HORÁRIO</span></div></div><div class="site-body"><div class="site-top"><span class="tag">Estética Automotiva</span><span class="live"><i></i> GitHub Pages</span></div><h3>Gallo Cuidados Especiais</h3><p>Site premium com serviços, prova social, posicionamento de marca e agendamento direto pelo WhatsApp.</p><div class="site-foot"><span class="domain">Projeto comercial</span><a class="open-project" href="../gallo-estetica/" target="_blank">Abrir <b>↗</b></a></div></div></article>
+          <article class="site-card reveal"><div class="site-preview smart-preview" data-live-src="../gallo-estetica/" aria-label="Prévia real de Gallo Cuidados Especiais"><div class="browser-bar"><i></i><i></i><i></i></div><div class="live-preview" aria-hidden="true"></div><div class="preview-status"><span>carregando prévia original</span></div><span class="preview-hint">ver ao vivo ↗</span></div><div class="site-body"><div class="site-top"><span class="tag">Estética Automotiva</span><span class="live"><i></i> GitHub Pages</span></div><h3>Gallo Cuidados Especiais</h3><p>Site premium com serviços, prova social, posicionamento de marca e agendamento direto pelo WhatsApp.</p><div class="site-foot"><span class="domain">Projeto comercial</span><a class="open-project" href="../gallo-estetica/" target="_blank">Abrir <b>↗</b></a></div></div></article>
 
-          <article class="site-card reveal"><div class="site-preview"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-preview b2b"><small>INDÚSTRIA DE POLÍMEROS</small><strong>Polímeros novos e reciclados com <b>qualidade e confiança.</b></strong><span class="mini-btn">SOLICITAR COTAÇÃO</span></div></div><div class="site-body"><div class="site-top"><span class="tag">Indústria & B2B</span><span class="live"><i></i> GitHub Pages</span></div><h3>Desataplas</h3><p>Apresentação institucional B2B com catálogo visual, sustentabilidade e cotação pelo WhatsApp.</p><div class="site-foot"><span class="domain">Louveira · SP</span><a class="open-project" href="../desataplas/" target="_blank">Abrir <b>↗</b></a></div></div></article>
+          <article class="site-card reveal"><div class="site-preview smart-preview" data-live-src="../desataplas/" aria-label="Prévia real de Desataplas"><div class="browser-bar"><i></i><i></i><i></i></div><div class="live-preview" aria-hidden="true"></div><div class="preview-status"><span>carregando prévia original</span></div><span class="preview-hint">ver ao vivo ↗</span></div><div class="site-body"><div class="site-top"><span class="tag">Indústria & B2B</span><span class="live"><i></i> GitHub Pages</span></div><h3>Desataplas</h3><p>Apresentação institucional B2B com catálogo visual, sustentabilidade e cotação pelo WhatsApp.</p><div class="site-foot"><span class="domain">Louveira · SP</span><a class="open-project" href="../desataplas/" target="_blank">Abrir <b>↗</b></a></div></div></article>
         </div>
       </div>
     </section>
@@ -590,6 +618,24 @@
     </section>
   </main>
 
+  <div class="project-viewer" id="projectViewer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Prévia do projeto">
+    <div class="viewer-shell">
+      <div class="viewer-bar">
+        <div class="viewer-dots"><i></i><i></i><i></i></div>
+        <span class="viewer-title" id="viewerTitle">Prévia do projeto</span>
+        <a class="viewer-open" id="viewerOpen" href="#" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto em nova aba">↗</a>
+        <button class="viewer-close" id="viewerClose" type="button" aria-label="Fechar prévia">×</button>
+      </div>
+      <div class="viewer-frame"><iframe id="viewerFrame" title="Projeto ao vivo" loading="lazy"></iframe></div>
+    </div>
+  </div>
+
+  <nav class="mobile-dock" aria-label="Navegação rápida">
+    <a href="#sites">◫ Projetos</a>
+    <a href="#videos">▶ Vídeos</a>
+    <a href="https://wa.me/5511991975903" target="_blank" rel="noopener noreferrer">✦ WhatsApp</a>
+  </nav>
+
   <footer><div class="wrap footer-in"><span><strong>Douglas Alves</strong> · Estratégia + Execução</span><span>Portfólio 2026 · Feito para carregar rápido</span></div></footer>
 
   <script>
@@ -656,6 +702,104 @@
           box.appendChild(iframe);
         });
       });
+
+      // Exact project previews, but deferred: no heavy iframe during the initial paint.
+      var liveTimers=new WeakMap();
+      function scalePreview(box){
+        var frame=box.querySelector('.live-preview iframe');
+        if(!frame)return;
+        var width=box.clientWidth;
+        frame.style.transform='scale('+(width/1440)+')';
+      }
+      function mountPreview(box){
+        var holder=box.querySelector('.live-preview');
+        if(!holder || holder.querySelector('iframe'))return;
+        var src=box.getAttribute('data-live-src');
+        if(!src)return;
+        var frame=document.createElement('iframe');
+        frame.src=src;
+        frame.title='Prévia real do projeto';
+        frame.loading='lazy';
+        frame.setAttribute('tabindex','-1');
+        frame.setAttribute('aria-hidden','true');
+        frame.addEventListener('load',function(){
+          holder.classList.add('ready');
+          scalePreview(box);
+        },{once:true});
+        holder.appendChild(frame);
+        scalePreview(box);
+      }
+      function unmountPreview(box){
+        var holder=box.querySelector('.live-preview');
+        if(!holder)return;
+        var frame=holder.querySelector('iframe');
+        if(frame){frame.remove();holder.classList.remove('ready')}
+      }
+      var previewObserver=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          var box=entry.target;
+          var old=liveTimers.get(box);
+          if(old)clearTimeout(old);
+          if(entry.isIntersecting){
+            mountPreview(box);
+          }else{
+            // keep the page light on mobile / long sessions.
+            var timer=setTimeout(function(){unmountPreview(box)},7000);
+            liveTimers.set(box,timer);
+          }
+        })
+      },{rootMargin:'260px 0px 260px 0px',threshold:.01});
+      document.querySelectorAll('.smart-preview').forEach(function(box){previewObserver.observe(box)});
+      addEventListener('resize',function(){document.querySelectorAll('.smart-preview').forEach(scalePreview)},{passive:true});
+
+      // Project viewer: real site is loaded only after an explicit click.
+      var viewer=document.getElementById('projectViewer');
+      var viewerFrame=document.getElementById('viewerFrame');
+      var viewerClose=document.getElementById('viewerClose');
+      var viewerOpen=document.getElementById('viewerOpen');
+      var viewerTitle=document.getElementById('viewerTitle');
+      function closeViewer(){
+        viewer.classList.remove('open');
+        viewer.setAttribute('aria-hidden','true');
+        viewerFrame.src='about:blank';
+        document.body.style.overflow='';
+      }
+      document.querySelectorAll('.site-card').forEach(function(card){
+        var preview=card.querySelector('.site-preview');
+        var link=card.querySelector('.open-project');
+        var title=card.querySelector('h3');
+        if(!preview || !link)return;
+        preview.setAttribute('tabindex','0');
+        preview.setAttribute('role','button');
+        preview.setAttribute('aria-label','Abrir prévia ao vivo de '+(title?title.textContent:'projeto'));
+        function openViewer(){
+          viewerTitle.textContent=(title?title.textContent:'Projeto')+' · prévia ao vivo';
+          viewerOpen.href=link.href;
+          viewerFrame.src=link.href;
+          viewer.classList.add('open');
+          viewer.setAttribute('aria-hidden','false');
+          document.body.style.overflow='hidden';
+          viewerClose.focus();
+        }
+        preview.addEventListener('click',openViewer);
+        preview.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openViewer()}});
+      });
+      viewerClose.addEventListener('click',closeViewer);
+      viewer.addEventListener('click',function(e){if(e.target===viewer)closeViewer()});
+      addEventListener('keydown',function(e){if(e.key==='Escape'&&viewer.classList.contains('open'))closeViewer()});
+
+      // Subtle 3D motion on desktop only. Touch devices keep stable, lightweight cards.
+      if(matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').matches){
+        document.querySelectorAll('.site-card').forEach(function(card){
+          card.addEventListener('pointermove',function(e){
+            var r=card.getBoundingClientRect();
+            var x=(e.clientX-r.left)/r.width-.5;
+            var y=(e.clientY-r.top)/r.height-.5;
+            card.style.transform='perspective(1100px) rotateX('+(-y*2.4)+'deg) rotateY('+(x*3.2)+'deg) translateY(-5px)';
+          });
+          card.addEventListener('pointerleave',function(){card.style.transform=''});
+        });
+      }
     })();
   </script>
 </body>
