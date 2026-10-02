@@ -87,8 +87,8 @@ jobs:
           printf '%s' "$encoded" | base64 --decode > /tmp/preview.html
 
           grep -Eqi '<!doctype html' /tmp/preview.html
-          grep -Eqi 'name=["'"'']robots["'"''][^>]*noindex|noindex[^>]*name=["'"'']robots["'"'']' /tmp/preview.html
-          grep -Eqi '<meta[^>]+name=["'"'']viewport["'"'']' /tmp/preview.html
+          grep -Eqi "name=['\\\"]robots['\\\"][^>]*noindex|noindex[^>]*name=['\\\"]robots['\\\"]" /tmp/preview.html
+          grep -Eqi "<meta[^>]+name=['\\\"]viewport['\\\"]" /tmp/preview.html
 
           size="$(wc -c < /tmp/preview.html)"
           if [ "$size" -lt 2500 ]; then
@@ -107,7 +107,12 @@ jobs:
           set -euo pipefail
 
           for attempt in 1 2 3 4 5 6; do
-            response="$(gh api               --method PUT               -H "Accept: application/vnd.github+json"               "repos/$REPO/pulls/$PR/merge"               -f merge_method=squash               -f commit_title="preview: publish $FOLDER" 2>/dev/null || true)"
+            response="$(gh api \
+              --method PUT \
+              -H "Accept: application/vnd.github+json" \
+              "repos/$REPO/pulls/$PR/merge" \
+              -f merge_method=squash \
+              -f commit_title="preview: publish $FOLDER" 2>/dev/null || true)"
 
             merged="$(printf '%s' "$response" | jq -r '.merged // false' 2>/dev/null || echo false)"
             if [ "$merged" = "true" ]; then
