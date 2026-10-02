@@ -1,0 +1,123 @@
+name: Auto-merge LeadRadar previews
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: leadradar-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate-and-merge:
+    if: >-
+      github.event.pull_request.user.login == 'copilot-swe-agent[bot]' &&
+      github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate preview-only change
+        id: scope
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(gh api "repos/$REPO/pulls/$PR/files?per_page=100" --paginate --jq '.[].filename')
+
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No files changed."
+            exit 1
+          fi
+
+          root=""
+          index_found="0"
+
+          for file in "${files[@]}"; do
+            echo "Checking: $file"
+
+            if [[ "$file" != */* ]]; then
+              echo "Root-level changes are not allowed."
+              exit 1
+            fi
+
+            candidate="${file%%/*}"
+
+            case "$candidate" in
+              .github|assets|template)
+                echo "Reserved path changed: $candidate"
+                exit 1
+                ;;
+            esac
+
+            if [ -z "$root" ]; then
+              root="$candidate"
+            elif [ "$candidate" != "$root" ]; then
+              echo "Preview PR must touch exactly one top-level lead folder."
+              exit 1
+            fi
+
+            if [ "$file" = "$root/index.html" ]; then
+              index_found="1"
+            fi
+          done
+
+          if [ "$index_found" != "1" ]; then
+            echo "Preview index.html was not changed."
+            exit 1
+          fi
+
+          echo "folder=$root" >> "$GITHUB_OUTPUT"
+
+      - name: Validate generated HTML
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+          FOLDER: ${{ steps.scope.outputs.folder }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          encoded="$(gh api "repos/$REPO/contents/$FOLDER/index.html?ref=$SHA" --jq '.content' | tr -d '\n')"
+          printf '%s' "$encoded" | base64 --decode > /tmp/preview.html
+
+          grep -Eqi '<!doctype html' /tmp/preview.html
+          grep -Eqi 'name=["'"'']robots["'"''][^>]*noindex|noindex[^>]*name=["'"'']robots["'"'']' /tmp/preview.html
+          grep -Eqi '<meta[^>]+name=["'"'']viewport["'"'']' /tmp/preview.html
+
+          size="$(wc -c < /tmp/preview.html)"
+          if [ "$size" -lt 2500 ]; then
+            echo "Generated preview is unexpectedly small: $size bytes"
+            exit 1
+          fi
+
+      - name: Merge validated preview
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          FOLDER: ${{ steps.scope.outputs.folder }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          for attempt in 1 2 3 4 5 6; do
+            response="$(gh api               --method PUT               -H "Accept: application/vnd.github+json"               "repos/$REPO/pulls/$PR/merge"               -f merge_method=squash               -f commit_title="preview: publish $FOLDER" 2>/dev/null || true)"
+
+            merged="$(printf '%s' "$response" | jq -r '.merged // false' 2>/dev/null || echo false)"
+            if [ "$merged" = "true" ]; then
+              echo "Preview merged."
+              exit 0
+            fi
+
+            echo "Merge not ready yet (attempt $attempt/6)."
+            sleep 10
+          done
+
+          echo "Could not merge preview PR automatically."
+          exit 1
