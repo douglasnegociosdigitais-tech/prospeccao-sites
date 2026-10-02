@@ -359,6 +359,19 @@
     .case-bullets strong{display:block;font-size:11px}.case-bullets span{display:block;color:#5f7892;font-size:9px;margin-top:3px}
     .case-feature img{border-radius:18px;border:1px solid #21415f;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top}
 
+    /* expertise */
+    .capability-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .capability{position:relative;overflow:hidden;min-height:230px;padding:26px;border:1px solid #19304a;border-radius:22px;background:linear-gradient(145deg,rgba(12,25,42,.9),rgba(6,13,22,.96));transition:.3s ease}
+    .capability:before{content:"";position:absolute;width:160px;height:160px;right:-70px;top:-70px;border:1px solid rgba(65,158,255,.16);border-radius:50%;box-shadow:0 0 50px rgba(35,140,255,.05)}
+    .capability:hover{transform:translateY(-4px);border-color:#2d557c;background:linear-gradient(145deg,rgba(14,31,52,.96),rgba(6,13,22,.98))}
+    .capability>span{display:block;color:#5f9edc;font-size:9px;font-weight:900;letter-spacing:.17em}
+    .capability h3{font-size:26px;letter-spacing:-.045em;margin:24px 0 9px}
+    .capability p{color:#8196ad;font-size:12px;line-height:1.7;max-width:500px;margin:0}
+    .capability small{display:block;margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,255,255,.055);color:#57718b;font-size:9px;line-height:1.7}
+    .process-line{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:14px;align-items:center;margin-top:14px;padding:18px;border:1px solid #19304a;border-radius:20px;background:#07111c}
+    .process-line div{min-width:0}.process-line b{display:block;color:#318fff;font-size:9px;letter-spacing:.16em}.process-line span{display:block;font-weight:850;font-size:15px;margin-top:5px}.process-line small{display:block;color:#5e7690;font-size:9px;margin-top:2px}.process-line i{color:#285177;font-style:normal}
+    .contact-number{margin-top:16px!important;color:#7993ad!important;font-size:12px!important}.contact-number strong{color:#d9eaff}
+
     /* services */
     .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .service{position:relative;min-height:230px;padding:21px;border:1px solid #17283b;border-radius:22px;background:linear-gradient(180deg,#0b131e,#080e16);overflow:hidden}
@@ -623,8 +636,8 @@
     <section class="block" id="sites">
       <div class="wrap">
         <div class="section-head reveal">
-          <div><span class="kicker">Produtos digitais</span><h2>Sites, SaaS e aplicações.</h2></div>
-          <p>Uma seleção de projetos publicados. As prévias são reais: screenshots dos projetos e, nos casos em que a captura antiga não representava bem o site, uma prévia ao vivo é carregada somente quando entra na tela.</p>
+          <div><span class="kicker">Projetos em produção</span><h2>Ideias que viraram produto.</h2></div>
+          <p>Sites, SaaS, marketplaces e ferramentas construídos para resolver problemas reais. Clique nas prévias para explorar os projetos publicados.</p>
         </div>
 
         <div class="site-grid">
@@ -802,11 +815,32 @@
       </div>
     </section>
 
+    <section class="block expertise" id="expertise">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="kicker">Visão multidisciplinar</span><h2>Eu entendo a jornada inteira.</h2></div>
+          <p>Minha vantagem é conseguir conversar com marketing, comercial, design e tecnologia sem perder o objetivo de negócio no caminho.</p>
+        </div>
+        <div class="capability-grid">
+          <article class="capability reveal"><span>01 / AQUISIÇÃO</span><h3>Growth & performance</h3><p>Oferta, funil, tráfego, criativos, mensuração e otimização orientados à geração de demanda.</p><small>Meta Ads · Google Ads · TikTok Ads · Analytics · CRO</small></article>
+          <article class="capability reveal"><span>02 / PRODUTO</span><h3>Web, SaaS & UX</h3><p>Experiências digitais que vão de uma landing page a sistemas multiempresa, dashboards e marketplaces.</p><small>Mobile-first · UX · Supabase · GitHub · Lovable · APIs</small></article>
+          <article class="capability reveal"><span>03 / OPERAÇÃO</span><h3>Automação & integrações</h3><p>Fluxos que conectam atendimento, leads, pagamentos, dados e tarefas repetitivas para ganhar velocidade operacional.</p><small>WhatsApp · Webhooks · Edge Functions · SQL · RLS · Bots</small></article>
+          <article class="capability reveal"><span>04 / COMUNICAÇÃO</span><h3>Copy, vídeo & direção criativa</h3><p>Da mensagem ao criativo final: posicionamento, roteiro, edição e peças para redes sociais, anúncios e páginas.</p><small>Copywriting · VSL · Reels · Shorts · Criativos · Design</small></article>
+        </div>
+        <div class="process-line reveal">
+          <div><b>01</b><span>Entender</span><small>negócio, público e gargalo</small></div><i>→</i>
+          <div><b>02</b><span>Desenhar</span><small>oferta, fluxo e experiência</small></div><i>→</i>
+          <div><b>03</b><span>Construir</span><small>site, produto, campanha ou automação</small></div><i>→</i>
+          <div><b>04</b><span>Otimizar</span><small>dados, conversão e operação</small></div>
+        </div>
+      </div>
+    </section>
+
     <section class="block" id="resultados">
       <div class="wrap">
         <div class="section-head reveal">
-          <div><span class="kicker">Prova de execução</span><h2>Resultados e histórico.</h2></div>
-          <p>Projetos do portfólio anterior e indicadores do meu histórico profissional em plataformas de trabalho.</p>
+          <div><span class="kicker">Prova de execução</span><h2>Estratégia precisa chegar no resultado.</h2></div>
+          <p>Além dos produtos construídos, meu histórico inclui projetos entregues, avaliações de clientes e campanhas com retorno comercial reportado.</p>
         </div>
         <div class="proof-strip reveal">
           <div class="proof"><strong>4,35 / 5</strong><span>12 avaliações no Freelas</span></div>
