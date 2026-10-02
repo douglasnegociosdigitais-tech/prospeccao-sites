@@ -1,0 +1,76 @@
+name: Gerar prévia de lead
+description: Solicitação para o agente gerar um site de prospecção completo.
+title: "[PREVIEW] "
+labels:
+  - preview
+body:
+  - type: markdown
+    attributes:
+      value: |
+        O agente deve seguir `.github/copilot-instructions.md`. Não invente dados do negócio.
+  - type: input
+    id: slug
+    attributes:
+      label: Slug
+      placeholder: vidracaria-louveira
+    validations:
+      required: true
+  - type: input
+    id: business_name
+    attributes:
+      label: Nome da empresa
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Categoria
+    validations:
+      required: true
+  - type: input
+    id: city
+    attributes:
+      label: Cidade
+  - type: input
+    id: phone
+    attributes:
+      label: WhatsApp / telefone
+  - type: input
+    id: google_maps_url
+    attributes:
+      label: Google Maps
+  - type: input
+    id: rating
+    attributes:
+      label: Nota Google
+  - type: input
+    id: review_count
+    attributes:
+      label: Quantidade de avaliações
+  - type: input
+    id: logo_url
+    attributes:
+      label: Logo
+  - type: textarea
+    id: photos
+    attributes:
+      label: Fotos reais
+      description: Uma URL por linha.
+  - type: textarea
+    id: reviews
+    attributes:
+      label: Avaliações reais
+      description: Cole apenas avaliações reais obtidas da fonte.
+  - type: textarea
+    id: hours
+    attributes:
+      label: Horários
+  - type: input
+    id: instagram
+    attributes:
+      label: Instagram
+  - type: textarea
+    id: notes
+    attributes:
+      label: Observações / direção visual
+      description: Preferências específicas, se houver.
