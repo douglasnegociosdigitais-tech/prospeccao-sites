@@ -157,8 +157,11 @@
     .brand{margin-right:auto;text-decoration:none;font-weight:900;letter-spacing:-.055em;font-size:19px}
     .brand b{color:var(--blue)}
     .nav-links{display:flex;align-items:center;gap:20px}
-    .nav-links a{font-size:12px;color:#8ea2ba;text-decoration:none;font-weight:700;transition:.2s}
-    .nav-links a:hover{color:#fff}
+    .nav-links a{position:relative;font-size:12px;color:#8ea2ba;text-decoration:none;font-weight:700;transition:.2s}
+    .nav-links a:hover,.nav-links a.active{color:#fff}
+    .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-9px;height:1px;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:right .24s ease}
+    .nav-links a.active::after,.nav-links a:hover::after{right:0}
+    a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex="0"]:focus-visible{outline:2px solid var(--blue-2);outline-offset:3px}
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:0 17px;
       border:1px solid var(--line-2);border-radius:14px;background:#091421;color:#deebfa;
@@ -261,6 +264,20 @@
     .stack-cloud span{display:inline-flex;align-items:center;min-height:34px;padding:0 11px;border:1px solid #17314b;border-radius:11px;background:#07111c;color:#6686a5;font-size:9px;font-weight:800;transition:.2s}
     .stack-cloud span:hover{color:#cbe6ff;border-color:#2a5a87;transform:translateY(-1px)}
 
+    .deep-cases{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .deep-case{position:relative;padding:23px;border:1px solid #19314a;border-radius:23px;background:
+      linear-gradient(160deg,rgba(10,24,39,.98),rgba(6,14,23,.98));overflow:hidden}
+    .deep-case::after{content:"";position:absolute;right:-85px;top:-85px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(35,140,255,.13),transparent 68%);pointer-events:none}
+    .deep-case .case-label{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#5d7b99;font-size:8px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+    .deep-case .case-label b{color:#79bbf8}
+    .deep-case h3{font-size:25px;letter-spacing:-.045em;margin:28px 0 9px}
+    .deep-case>p{font-size:11px;line-height:1.65;color:#70869d;margin:0}
+    .deep-map{display:grid;gap:8px;margin-top:18px}
+    .deep-map div{padding:11px 12px;border:1px solid #173047;border-radius:12px;background:#06101a}
+    .deep-map strong{display:block;font-size:9px;color:#a9c8e6}
+    .deep-map span{display:block;margin-top:3px;color:#55728d;font-size:8px;line-height:1.5}
+    .niche-strip{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+    .niche-strip span{padding:7px 9px;border-radius:999px;border:1px solid #17314a;background:#07111b;color:#607f9d;font-size:8px;font-weight:800}
     .lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .lab-card{position:relative;padding:21px;border:1px solid #172c42;border-radius:21px;background:linear-gradient(155deg,#091522,#07101a);overflow:hidden}
     .lab-card::after{content:"";position:absolute;right:-80px;bottom:-95px;width:190px;height:190px;border-radius:50%;border:1px solid rgba(35,140,255,.12)}
@@ -315,6 +332,8 @@
     .live-preview.ready + .preview-status{opacity:0;pointer-events:none}
     .preview-status span{display:flex;align-items:center;gap:8px;color:#6e8eac;font-size:9px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
     .preview-status span:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 15px var(--blue);animation:pulseDot 1.2s ease-in-out infinite}
+    .preview-status.error span{letter-spacing:.04em;text-transform:none;color:#87a4bf}
+    .preview-status.error span:before{background:#47647e;box-shadow:none;animation:none}
     @keyframes pulseDot{50%{opacity:.35;transform:scale(.7)}}
     .preview-hint{position:absolute;z-index:8;right:10px;bottom:10px;display:flex;align-items:center;gap:6px;padding:7px 9px;border:1px solid rgba(100,180,255,.23);border-radius:999px;background:rgba(4,10,17,.78);backdrop-filter:blur(10px);color:#a8ccef;font-size:8px;font-weight:850;letter-spacing:.04em;opacity:0;transform:translateY(4px);transition:.22s}
     .site-preview:hover .preview-hint{opacity:1;transform:none}
@@ -428,6 +447,7 @@
       .outcome-intro{grid-template-columns:1fr}
       .outcome-grid{grid-template-columns:repeat(2,1fr)}
       .lab-grid{grid-template-columns:repeat(2,1fr)}
+      .deep-cases{grid-template-columns:1fr}
       .process-grid{grid-template-columns:repeat(2,1fr)}
       .process-step::after{display:none}
 
@@ -461,7 +481,7 @@
       .orbit.one{right:45%;transform:translateX(50%)}.orbit.two{right:50%;transform:translateX(50%)}
       section.block{padding:60px 0;contain-intrinsic-size:1px 650px}
       .section-head{grid-template-columns:1fr;gap:11px;margin-bottom:24px}.section-head h2{font-size:39px}
-      .site-grid,.service-grid,.cases,.video-grid,.reviews-grid,.credential-grid,.outcome-grid,.lab-grid,.process-grid{grid-template-columns:1fr}
+      .site-grid,.service-grid,.cases,.video-grid,.reviews-grid,.credential-grid,.outcome-grid,.lab-grid,.deep-cases,.process-grid{grid-template-columns:1fr}
       .value-panel{padding:22px}
       .outcome-card{min-height:0}
       .process-step{min-height:0}
@@ -676,6 +696,54 @@
       </div>
     </section>
 
+    <section class="block" id="cases">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="kicker">Cases em profundidade</span><h2>Não é só interface. Existe lógica por trás.</h2></div>
+          <p>Alguns projetos mostram melhor a amplitude do meu trabalho: estratégia de produto, UX, automação, dados, integrações, regras de negócio e visão comercial no mesmo projeto.</p>
+        </div>
+
+        <div class="deep-cases">
+          <article class="deep-case reveal">
+            <div class="case-label"><span>Prospecção & vendas</span><b>LeadRadar</b></div>
+            <h3>Transformar busca local em processo comercial.</h3>
+            <p>O LeadRadar nasceu da necessidade de encontrar empresas com potencial, priorizar oportunidades e organizar uma prospecção que antes exigia várias ferramentas e trabalho manual.</p>
+            <div class="deep-map">
+              <div><strong>Problema</strong><span>Leads dispersos, pesquisa manual, abordagem sem contexto e dificuldade de acompanhar follow-up.</span></div>
+              <div><strong>Solução construída</strong><span>Busca de negócios, score comercial, pipeline, persistência em cloud, BotBot, webhook de respostas e geração de prévias via GitHub.</span></div>
+              <div><strong>Capacidade demonstrada</strong><span>Growth + produto + automação + integração de APIs + UX comercial.</span></div>
+            </div>
+          </article>
+
+          <article class="deep-case reveal">
+            <div class="case-label"><span>SaaS & operação</span><b>AgendaDâi</b></div>
+            <h3>Agenda não basta quando o negócio precisa operar.</h3>
+            <p>O projeto evoluiu de uma agenda simples para uma estrutura multiempresa com jornada pública, gestão interna e regras reais de atendimento.</p>
+            <div class="deep-map">
+              <div><strong>Problema</strong><span>Agendamentos, profissionais, clientes, horários e operação precisavam funcionar juntos sem conflito.</span></div>
+              <div><strong>Solução construída</strong><span>Booking público, agenda, CRM, bloqueios, pacotes, estoque, analytics, lembretes WhatsApp, tema dark/light e regras multi-tenant.</span></div>
+              <div><strong>Capacidade demonstrada</strong><span>Arquitetura de produto + UX + banco de dados + regras de negócio + automação.</span></div>
+            </div>
+          </article>
+
+          <article class="deep-case reveal">
+            <div class="case-label"><span>Marketplace & produto</span><b>Gamify</b></div>
+            <h3>Um marketplace precisa de confiança e regras, não só catálogo.</h3>
+            <p>O Gamify trabalha a experiência de compra e venda de produtos digitais gamers com preocupação em moderação, taxas, responsividade e evolução da operação.</p>
+            <div class="deep-map">
+              <div><strong>Problema</strong><span>Criar uma experiência simples para comprador e vendedor sem incentivar negociação fora da plataforma.</span></div>
+              <div><strong>Solução construída</strong><span>Catálogo, perfis, regras de moderação, lógica de taxas, experiência mobile e estrutura preparada para pagamentos e reputação.</span></div>
+              <div><strong>Capacidade demonstrada</strong><span>Marketplace + monetização + UX + governança de produto + growth.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="niche-strip reveal" aria-label="Segmentos com projetos e protótipos">
+          <span>Barbearia</span><span>Clínica estética</span><span>Estética automotiva</span><span>Academia</span><span>Pet shop & veterinária</span><span>Indústria B2B</span><span>Restaurante</span><span>Streaming</span><span>Marketplace gamer</span><span>Esportes & dados</span><span>Serviços locais</span><span>Infoprodutos</span>
+        </div>
+      </div>
+    </section>
+
     <section class="block" id="laboratorio">
       <div class="wrap">
         <div class="section-head reveal">
@@ -879,14 +947,14 @@
       var hero=document.getElementById('profileHero');
       var start=performance.now();
       function finish(){
-        var wait=Math.max(0,520-(performance.now()-start));
+        var wait=Math.max(0,160-(performance.now()-start));
         setTimeout(function(){
           preloader.classList.add('done');
           document.body.classList.remove('loading');
         },wait);
       }
       if(hero && !hero.complete){
-        var timeout=setTimeout(finish,1100);
+        var timeout=setTimeout(finish,650);
         hero.addEventListener('load',function(){clearTimeout(timeout);finish()},{once:true});
         hero.addEventListener('error',function(){clearTimeout(timeout);finish()},{once:true});
       }else{finish()}
@@ -913,6 +981,19 @@
         })
       },{threshold:.08,rootMargin:'0px 0px -30px'});
       document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+
+      // Context-aware navigation: highlights the section currently being viewed.
+      var navAnchors=[].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+      var sectionMap=new Map(navAnchors.map(function(a){return [a.getAttribute('href').slice(1),a]}));
+      var navObserver=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting && sectionMap.has(entry.target.id)){
+            navAnchors.forEach(function(a){a.classList.remove('active')});
+            sectionMap.get(entry.target.id).classList.add('active');
+          }
+        });
+      },{rootMargin:'-30% 0px -58% 0px',threshold:0});
+      sectionMap.forEach(function(_,id){var el=document.getElementById(id);if(el)navObserver.observe(el)});
 
       document.querySelectorAll('.video-tabs button').forEach(function(btn){
         btn.addEventListener('click',function(){
@@ -963,6 +1044,16 @@
         },{once:true});
         holder.appendChild(frame);
         scalePreview(box);
+        var status=box.querySelector('.preview-status');
+        var loaded=false;
+        frame.addEventListener('load',function(){loaded=true},{once:true});
+        setTimeout(function(){
+          if(!loaded && status){
+            status.classList.add('error');
+            var label=status.querySelector('span');
+            if(label)label.textContent='Clique para abrir a prévia real';
+          }
+        },4500);
       }
       function unmountPreview(box){
         var holder=box.querySelector('.live-preview');
