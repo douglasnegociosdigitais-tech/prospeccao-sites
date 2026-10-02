@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Douglas Alves — Estratégia, Vídeo e Crescimento Digital</title>
+  <meta name="description" content="Portfólio de Douglas Alves: edição de vídeo, criativos, tráfego pago, design e estratégia digital.">
+  <meta name="theme-color" content="#0b0d10">
+  <meta property="og:title" content="Douglas Alves — Portfólio">
+  <meta property="og:description" content="Edição de vídeo, criativos, tráfego pago, design e estratégia digital.">
+  <meta property="og:type" content="website">
+  <style>
+    :root{
+      --bg:#0b0d10;--surface:#12151a;--surface2:#181c22;--text:#f5f7fa;--muted:#9aa4b2;
+      --line:#252a32;--accent:#7cf2c3;--accent2:#a9ffe1;--max:1180px;--r:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 12% 0%,rgba(124,242,195,.08),transparent 32rem),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+    .nav{position:sticky;top:0;z-index:30;background:rgba(11,13,16,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav .wrap{min-height:72px;display:flex;align-items:center;gap:22px}
+    .brand{font-weight:850;letter-spacing:-.04em;font-size:18px;margin-right:auto}
+    .brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:18px}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:13px;font-weight:650}
+    .nav-links a:hover{color:var(--text)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 17px;border-radius:14px;text-decoration:none;font-weight:800;font-size:13px;border:1px solid var(--line);background:var(--surface);transition:.2s}
+    .btn:hover{transform:translateY(-1px);border-color:#3c444f}
+    .btn.primary{background:var(--accent);color:#07100c;border-color:transparent}
+    .hero{padding:86px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+    h1{font-size:clamp(54px,7vw,88px);line-height:.95;letter-spacing:-.065em;margin:0;max-width:820px}
+    .lead{font-size:19px;color:#b6bfca;max-width:760px;margin:24px 0 0;line-height:1.65}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+    .hero-stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
+    .hero-stats strong{display:block;font-size:22px;letter-spacing:-.04em}
+    .hero-stats span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+    .portrait{position:relative;border-radius:32px;overflow:hidden;background:var(--surface2);border:1px solid var(--line);aspect-ratio:.88;box-shadow:0 28px 80px rgba(0,0,0,.28)}
+    .portrait img{width:100%;height:100%;object-fit:cover}
+    .section{padding:78px 0}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}
+    .section-head h2{font-size:clamp(34px,4.5vw,54px);letter-spacing:-.05em;line-height:1;margin:0}
+    .section-head p{max-width:580px;color:var(--muted);font-size:14px;margin:0}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .service{min-height:220px;padding:22px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(180deg,var(--surface),#0f1216)}
+    .service i{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:rgba(124,242,195,.1);color:var(--accent);font-style:normal;font-size:18px}
+    .service h3{font-size:18px;margin:36px 0 8px;letter-spacing:-.03em}
+    .service p{color:var(--muted);font-size:12px;margin:0;line-height:1.65}
+    .video-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+    .video-tabs button{background:var(--surface);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-weight:750;cursor:pointer}
+    .video-tabs button.active{background:var(--accent);color:#06100c;border-color:transparent}
+    .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .video-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+    .video-card iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
+    .video-card.vertical iframe{aspect-ratio:9/16}
+    .video-card .meta{padding:14px 15px}
+    .video-card strong{font-size:13px}
+    .video-card small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+    .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .case{padding:22px;border-radius:22px;border:1px solid var(--line);background:var(--surface)}
+    .case .label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em}
+    .case h3{font-size:22px;margin:7px 0 18px;letter-spacing:-.03em}
+    .case .numbers{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px}
+    .case .numbers div{flex:1;padding:12px;border-radius:14px;background:#0e1115;border:1px solid var(--line)}
+    .case .numbers span{display:block;color:var(--muted);font-size:9px}
+    .case .numbers strong{display:block;margin-top:3px;font-size:15px}
+    .case img{margin-top:10px;border-radius:12px;border:1px solid var(--line);background:#fff}
+    .design-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .design-card{padding:20px;border:1px solid var(--line);background:var(--surface);border-radius:20px;text-decoration:none}
+    .design-card strong{display:block;font-size:18px}
+    .design-card span{display:block;color:var(--muted);font-size:11px;margin-top:6px}
+    .reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .review-shot{padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px}
+    .review-shot img{width:100%;border-radius:10px}
+    .clients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .client-type{padding:20px;border:1px solid var(--line);background:var(--surface);border-radius:18px}
+    .client-type strong{font-size:15px}
+    .client-type p{color:var(--muted);font-size:11px;line-height:1.6;margin:8px 0 0}
+    .contact{padding:52px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(135deg,#141a18,#0e1211);display:flex;justify-content:space-between;gap:30px;align-items:center}
+    .contact h2{font-size:clamp(34px,4.2vw,58px);letter-spacing:-.05em;line-height:1;margin:0;max-width:700px}
+    .contact p{color:var(--muted);margin:14px 0 0}
+    footer{padding:34px 0 48px;color:#727b86;font-size:11px}
+    @media(max-width:980px){
+      .hero-grid{grid-template-columns:1fr}.portrait{max-width:520px}
+      .service-grid,.clients-grid{grid-template-columns:repeat(2,1fr)}
+      .video-grid,.cases,.design-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:700px){
+      .nav-links{display:none}.hero{padding-top:54px}
+      h1{font-size:51px}.lead{font-size:16px}
+      .portrait{border-radius:24px}
+      .section{padding:56px 0}.section-head{display:block}.section-head p{margin-top:12px}
+      .service-grid,.video-grid,.cases,.design-grid,.reviews-grid,.clients-grid{grid-template-columns:1fr}
+      .contact{padding:28px;display:block}.contact .hero-actions{margin-top:22px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap">
+      <div class="brand">Douglas <span>Alves</span></div>
+      <div class="nav-links">
+        <a href="#videos">Vídeos</a><a href="#resultados">Resultados</a><a href="#design">Design</a><a href="#avaliacoes">Avaliações</a>
+      </div>
+      <a class="btn primary" href="https://wa.me/5511991975903" target="_blank" rel="noopener noreferrer">Falar comigo</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Estratégia digital + execução criativa</span>
+        <h1>Conteúdo que parece bom. Estratégia que precisa funcionar.</h1>
+        <p class="lead">Atuo no mercado digital desde 2018, unindo edição de vídeo, criativos, design e tráfego pago para marcas, infoprodutores e empresas que precisam crescer online.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://wa.me/5511991975903" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a>
+          <a class="btn" href="#videos">Ver trabalhos</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>Desde 2018</strong><span>atuando no digital</span></div>
+          <div><strong>Vídeo + estratégia</strong><span>criativos pensados para converter</span></div>
+          <div><strong>Multinicho</strong><span>projetos em diferentes segmentos</span></div>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="https://cdn.gamma.app/dj2s06p7nf3m0lf/805180a746bb41f9a3eebc9583700256/original/IMG_6585.JPG.jpeg" alt="Douglas Alves" loading="eager">
+      </figure>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>O que eu faço</h2>
+        <p>Mais do que entregar peças isoladas, organizo execução e estratégia para o conteúdo ter função dentro do negócio.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service"><i>▶</i><h3>Edição de vídeo</h3><p>VSLs, criativos, Reels, Shorts, TikTok, vídeos institucionais e conteúdos longos para YouTube.</p></article>
+        <article class="service"><i>↗</i><h3>Tráfego pago</h3><p>Estruturação e gestão de campanhas com foco em aquisição, validação de oferta e retorno sobre investimento.</p></article>
+        <article class="service"><i>✦</i><h3>Design</h3><p>Thumbnails, banners, logotipos, capas e materiais visuais para comunicação digital.</p></article>
+        <article class="service"><i>◎</i><h3>Estratégia digital</h3><p>Planejamento de conteúdo e presença digital para YouTube, Instagram, TikTok e operações de e-commerce.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="videos">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Trabalhos em vídeo</h2>
+        <p>Uma seleção dos materiais que já editei, separada por formato para facilitar a visualização.</p>
+      </div>
+      <div class="video-tabs">
+        <button class="active" data-filter="all">Todos</button>
+        <button data-filter="vsl">VSL / Criativos</button>
+        <button data-filter="short">Curtos</button>
+        <button data-filter="youtube">YouTube</button>
+      </div>
+      <div class="video-grid">
+        <article class="video-card" data-cat="vsl"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/ZruFJooQghQ" title="VSL / Criativo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>VSL / Criativo</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="vsl"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/KEp1YPbnDRA" title="VSL / Criativo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>VSL / Criativo</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="vsl"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/XCVd2Jd3GDY" title="Criativo curto" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Criativo curto</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="vsl"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/73hsSzkxa_c" title="VSL / Criativo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>VSL / Criativo</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="vsl"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7y4pHsHB99o" title="VSL / Criativo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>VSL / Criativo</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="vsl"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/wH3stZOOZJk" title="VSL / Criativo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>VSL / Criativo</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="short"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/-DW6x1Xu6NQ" title="Criativo curto" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Criativo curto</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="short"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/eMS8UUqgmv8" title="Criativo curto" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Criativo curto</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="youtube"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/gC-loeg-oBQ" title="Vídeo para YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Vídeo para YouTube</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="youtube"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/54YR-iRFoUE" title="Vídeo para YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Vídeo para YouTube</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="youtube"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/cFuVK30CcEk" title="Nicho escrita" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Nicho escrita</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="youtube"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/0xxLE40BQnE" title="Institucional" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Institucional</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="youtube"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/gS8zZKox278" title="Nicho motivacional" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Nicho motivacional</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="youtube"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/udz1yCo0L-g" title="Nicho religião" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Nicho religião</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="youtube"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/diA9kSGC9xA" title="Nicho pagamentos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Nicho pagamentos</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="youtube"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/GD0RVlaMBf4" title="Nicho viagens" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Nicho viagens</strong><small>Projeto de edição</small></div></article><article class="video-card" data-cat="youtube"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/rkAhwMyp51c" title="Conteúdo em inglês" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="meta"><strong>Conteúdo em inglês</strong><small>Projeto de edição</small></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="resultados">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Resultados em tráfego</h2>
+        <p>Casos apresentados no portfólio antigo, com investimento e retorno reportados para cada operação.</p>
+      </div>
+      <div class="cases">
+        <article class="case">
+          <span class="label">Palestrante</span><h3>Campanha de aquisição</h3>
+          <div class="numbers"><div><span>Investimento</span><strong>R$ 766,99</strong></div><div><span>Retorno</span><strong>R$ 12.700</strong></div></div>
+          <img src="https://cdn.gamma.app/dj2s06p7nf3m0lf/666993f6875340ef9ee97a907bbab8a3/original/Palestrante.jpg" alt="Resultado de campanha para palestrante" loading="lazy">
+        </article>
+        <article class="case">
+          <span class="label">Delivery / Marmitaria</span><h3>Campanha de vendas</h3>
+          <div class="numbers"><div><span>Investimento</span><strong>R$ 2.439,95</strong></div><div><span>Retorno</span><strong>R$ 16.568</strong></div></div>
+          <img src="https://cdn.gamma.app/dj2s06p7nf3m0lf/fe1152a1e84a4f7e95c4e550acbc8e3a/original/Delivery-marmitaria.jpg" alt="Resultado de campanha para delivery" loading="lazy">
+        </article>
+        <article class="case">
+          <span class="label">Terapeuta</span><h3>Campanha de aquisição</h3>
+          <div class="numbers"><div><span>Investimento</span><strong>R$ 1.301,84</strong></div><div><span>Retorno</span><strong>R$ 21.898</strong></div></div>
+          <img src="https://cdn.gamma.app/dj2s06p7nf3m0lf/c2bbb26438a64202b0724f2e1614abe5/original/Terapeuta.jpg" alt="Resultado de campanha para terapeuta" loading="lazy">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="design">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Design</h2>
+        <p>Trabalhos antigos organizados no Behance: thumbnails, identidades e capas.</p>
+      </div>
+      <div class="design-grid">
+        <a class="design-card" href="https://www.behance.net/gallery/178287695/Thumbnails-para-Youtube" target="_blank" rel="noopener noreferrer"><strong>Thumbnails para YouTube</strong><span>Abrir projeto no Behance →</span></a>
+        <a class="design-card" href="https://www.behance.net/gallery/74067831/Logotipos" target="_blank" rel="noopener noreferrer"><strong>Logotipos</strong><span>Abrir projeto no Behance →</span></a>
+        <a class="design-card" href="https://www.behance.net/gallery/178288357/Capa-Ebook-Marketing-Digital" target="_blank" rel="noopener noreferrer"><strong>Capa de eBook</strong><span>Abrir projeto no Behance →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="avaliacoes">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Avaliações de clientes</h2>
+        <p>Feedbacks reais que já faziam parte do seu portfólio antigo.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-shot"><img src="https://cdn.gamma.app/dj2s06p7nf3m0lf/bcd425ae05e74bfda9f5f8bc0f98bad3/original/Screenshot_43.png" alt="Avaliação de cliente 1" loading="lazy"></div><div class="review-shot"><img src="https://cdn.gamma.app/dj2s06p7nf3m0lf/b236974b9b6446a28e9c9208d9b12e5d/original/Screenshot_11.png" alt="Avaliação de cliente 2" loading="lazy"></div><div class="review-shot"><img src="https://cdn.gamma.app/dj2s06p7nf3m0lf/e438caec82764fe985de7001d51b218e/original/Screenshot_40.png" alt="Avaliação de cliente 3" loading="lazy"></div><div class="review-shot"><img src="https://cdn.gamma.app/dj2s06p7nf3m0lf/408decc54f3f4320b379fdf0a466e84d/original/Screenshot_41.png" alt="Avaliação de cliente 4" loading="lazy"></div><div class="review-shot"><img src="https://cdn.gamma.app/dj2s06p7nf3m0lf/6772538671714a658e3068af8ad5e127/original/Screenshot_42.png" alt="Avaliação de cliente 5" loading="lazy"></div><div class="review-shot"><img src="https://cdn.gamma.app/dj2s06p7nf3m0lf/fa8bf029c68c49c28bbd40fbdd443702/original/Screenshot_12.png" alt="Avaliação de cliente 6" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>Experiência em diferentes canais</h2><p>O portfólio antigo também mostrava atuação em operações de conteúdo e crescimento para diferentes plataformas.</p></div>
+      <div class="clients-grid">
+        <article class="client-type"><strong>YouTube</strong><p>Gestão e otimização de conteúdo para crescimento de canais.</p></article>
+        <article class="client-type"><strong>Instagram</strong><p>Estratégias de conteúdo para ampliar visibilidade e engajamento.</p></article>
+        <article class="client-type"><strong>TikTok</strong><p>Produção e edição de vídeos curtos para influenciadores e operações dark.</p></article>
+        <article class="client-type"><strong>E-commerce</strong><p>Otimização da presença digital com foco em aquisição e vendas.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap contact">
+      <div>
+        <h2>Quer transformar uma ideia em algo que vende?</h2>
+        <p>Me chama e me conta o que você precisa. Eu te digo como posso ajudar.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="https://wa.me/5511991975903" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="btn" href="mailto:douglasallvex@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="wrap">© Douglas Alves · Portfólio profissional</div></footer>
+
+  <script>
+    const buttons=[...document.querySelectorAll('.video-tabs button')];
+    const cards=[...document.querySelectorAll('.video-card')];
+    buttons.forEach(btn=>btn.addEventListener('click',()=>{
+      buttons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+      const filter=btn.dataset.filter;
+      cards.forEach(card=>card.style.display=filter==='all'||card.dataset.cat===filter?'block':'none');
+    }));
+  </script>
+</body>
+</html>
